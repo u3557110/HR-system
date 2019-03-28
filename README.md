@@ -13,10 +13,10 @@
 *Chu Kin Ning<u3557110@connect.hku.hk>
 *Leung King To<toleung2@connect.hku.hk>
 
-## Problem Statement
+## Overview
 Many of the Staff Management Systems on the market is not free of charge. This obstructs the use of such systems in small and medium enterprises (SMEs), as resources of these companies are relatively constraints. To solve this, our group is going to develop a open-source staff management system. It is free of charge, and it allows everyone to add more features on it. Our system is easy to use, any company will manage to use it. Important features are implemented in our system so that it can be used in the real world directly. 
 
-## Overview
+## Features
 The project is used to gather and manage the information about the employees of a company. 
 
 ### Searching for Employee(s)
