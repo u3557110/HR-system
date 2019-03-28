@@ -6,7 +6,7 @@
 </h1>
 
 <h3 align="center">
-	 Compact Staff Management System designed for SMEs
+	 Compact staff management system designed for SMEs
 </h3>
 
 ## Team member
