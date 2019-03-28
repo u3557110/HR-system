@@ -1,4 +1,4 @@
- ![Alt text](C:\Users\kinof\Desktop)
+ ![image](https://github.com/u3557110/HR-system/blob/master/LOGO.PNG)
  # Staff Management System
 
 # Team member
