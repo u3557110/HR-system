@@ -1,18 +1,28 @@
- ![image](https://github.com/u3557110/HR-system/blob/master/LOGO.PNG)
- # Staff Management System
+<h1 align="center">
+	<img
+		width="650"
+		alt="The Lounge"
+		src="https://github.com/u3557110/HR-system/blob/master/LOGO.PNG">
+</h1>
 
-# Team member
+# Staff Management System
+
+## Team member
 *Chu Kin Ning<u3557110@connect.hku.hk>
 *Leung King To<toleung2@connect.hku.hk>
 
-# Problem Statement:
+## Problem Statement:
 Many of the Staff Management Systems on the market is not free of charge. This obstructs the use of such systems in small and medium enterprises (SMEs), as resources of these companies are relatively constraints. To solve this, our group is going to develop a open-source staff management system. It is free of charge, and it allows everyone to add more features on it. Our system is easy to use, any company will manage to use it. Important features are implemented in our system so that it can be used in the real world directly. 
 
-
-# What the project does
+## What the Project Does
 The project is used to gather and manage the information about the employees of a company. 
-First of all, the user can search for a particular or a group of the employee by defining the search criteria. The criteria include the employee’s staff number, name, age, role, phone number, address, birthday, gender, HKID number, bank account, salary, full time or part time, leave, suspension, etc. Also, the user can search for all employees with a salary higher than or lower than user input. 
+
+### Searching for Employee(s)
+The user can search for employee(s) by defining the search criteria. The criteria include the employee’s staff number, name, age, role, phone number, address, birthday, gender, HKID number, bank account, salary, full time or part time, leave, suspension, etc. Also, the user can search for all employees with a salary higher than or lower than user input.
+
+### Manipulate the Information
 Secondly, the user can manipulate the information of the workers. Also, the user can add self-defined attributes or deleting attributes. Thus, the user could add a new worker or fire him. 
+###
 Finally, the programme could read the information of the users from text files. Also, the user could export the information of the specific workers for reference.
 Due to the scheduled time is limited, the information is stored in an array rather than in a database.
 #Why the project is useful
