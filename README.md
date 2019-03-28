@@ -1,5 +1,4 @@
-# Staff Management System
-# Project Title
+ # Staff Management System
 
 One Paragraph of project description goes here
 
