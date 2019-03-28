@@ -1,7 +1,7 @@
 <h1 align="center">
 	<img
 		width="650"
-		alt="The Lounge"
+		alt="Staff Management System"
 		src="https://github.com/u3557110/HR-system/blob/master/LOGO.PNG">
 </h1>
 
