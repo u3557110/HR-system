@@ -9,23 +9,23 @@
 	 Compact staff management system designed for SMEs
 </h3>
 
-## Team member
+## Team Member
 *Chu Kin Ning<u3557110@connect.hku.hk>
 *Leung King To<toleung2@connect.hku.hk>
 
-## Problem statement
+## Problem Statement
 Many of the Staff Management Systems on the market is not free of charge. This obstructs the use of such systems in small and medium enterprises (SMEs), as resources of these companies are relatively constraints. To solve this, our group is going to develop a open-source staff management system. It is free of charge, and it allows everyone to add more features on it. Our system is easy to use, any company will manage to use it. Important features are implemented in our system so that it can be used in the real world directly. 
 
-## What does our system do
+## Overview
 The project is used to gather and manage the information about the employees of a company. 
 
 ### Searching for Employee(s)
 The user can search for employee(s) by defining the search criteria. The criteria include the employee’s staff number, name, age, role, phone number, address, birthday, gender, HKID number, bank account, salary, full time or part time, leave, suspension, etc. Also, the user can search for all employees with a salary higher than or lower than user input.
 
-### Manipulate the information of employee(s)
+### Manipulate the Information of Employee(s)
 The user can manipulate the information of the workers. Also, the user can add self-defined attributes or deleting attributes. Thus, the user could add a new worker or fire him. 
 
-### Import/Export the information of employee(s)
+### Import/Export the Information of Employee(s)
 The programme could read the information of the users from text files. Also, the user could export the information of the specific workers for reference.
 Due to the scheduled time is limited, the information is stored in an array rather than in a database.
 
