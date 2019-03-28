@@ -1,4 +1,4 @@
- ![Alt text](G:\我的雲端硬碟\year1 sem2\engg1340\Staff management)
+ ![Alt text](C:\Users\kinof\Desktop)
  # Staff Management System
 
 # Team member
@@ -18,7 +18,8 @@ Due to the scheduled time is limited, the information is stored in an array rath
 #Why the project is useful
 This project is useful because it could facilitate the managing work of human resources. Searching workers by different attributes such as ages, salary, roles could help to specify a certain group of workers which help to obtain information about the size of related workers about and evaluate some policy. Allow adding or deleting self-defined attributes could help to customize different workers, companies and industries. Allow adding and firing workers could help to update the worker size in the system. Exporting information of workers out could help to save the workers’ information for reference.
 
-#How users can get started with the project
+# How users can get started with the project
 The user can first define the amount of the workers and input the indicators of them, such as name or ID, then the user fills in the default attributes of them. To further alter the details, the user could alter and manipulate the attributes of various worker respectively.
-#Where users can get help with your project
+
+# Where users can get help with your project
 A video of how to set up a file of a worker and an example of a finalised worker file will be provided in order to help the user to get used to the programme as soon as possible.
