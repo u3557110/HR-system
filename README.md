@@ -5,7 +5,9 @@
 		src="https://github.com/u3557110/HR-system/blob/master/LOGO.PNG">
 </h1>
 
-# Staff Management System
+<h3 align="center">
+	 Staff Management System
+</h3>
 
 ## Team member
 *Chu Kin Ning<u3557110@connect.hku.hk>
