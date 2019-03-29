@@ -15,7 +15,7 @@
 
 ## Team
 
-[![Chu Kin Ning](http://gravatar.com/avatar/d36a92237c75c5337c17b60d90686bf9?s=144)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=460&v=4)](https://github.com/totoleung) 
+[![Chu Kin Ning](https://avatars1.githubusercontent.com/u/47244396?s=460&v=4)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=460&v=4)](https://github.com/totoleung) 
 ---|---
 [Chu Kin Ning](https://github.com/u3557110) | [Leung King To](https://github.com/totoleung) 
 
