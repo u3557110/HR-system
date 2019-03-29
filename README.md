@@ -36,7 +36,7 @@ This system is useful because it can facilitate the managing work of human resou
 
 The information of the employees working on the same project can also be obtained for futher evaluation. For example, to determine whether there are too much manpower on a project. Workers can be diverted to other project which is lack of manpower.
 
-Adding self-defined attributes enable the staff management system can work smoothly on different types of workers, companies and industries. The adding and deleting function can help to update the records of workers in real time. Exporting the information of workers out can help to save the workers’ information for backup.
+Adding self-defined attributes enable the staff management system can work smoothly on different types of workers, companies and industries. The adding and deleting function can help to update the records of workers in real time. Exporting the information of workers out can help to save the information for backup purpose.
 
 ## How users can get started with the project
 The user can first define the amount of the workers and input the indicators of them, such as name or ID, then the user fills in the default attributes of them. To further alter the details, the user could alter and manipulate the attributes of various worker respectively.
