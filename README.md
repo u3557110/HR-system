@@ -31,7 +31,7 @@ Information of the existing workers can be modified. In case of being fired, rec
 ### Import/Export the Information of Employee(s)
 The programme can import the information of employee from text files. Also, the user can export the data for backup purpose.
 
-## The System is Useful
+## Highlights of the System
 This system is useful because it can facilitate the managing work of human resources. Searching workers by different attributes such as ages, salary, roles can help to specify a certain group of workers. 
 
 The information of the employees working on the same project can also be obtained for futher evaluation. For example, to determine whether there are too much manpower on a project. Workers can be diverted to other project which is lack of manpower.
