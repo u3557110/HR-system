@@ -46,6 +46,6 @@ A video of how to set up a file of a worker and an example of a finalised worker
 
 ## Team
 
-[![Chu Kin Ning](https://avatars1.githubusercontent.com/u/47244396?s=460&v=4)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=460&v=4)](https://github.com/totoleung) 
+[![Chu Kin Ning](https://avatars1.githubusercontent.com/u/47244396?s=200&v=4)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=200&v=4)](https://github.com/totoleung) 
 ---|---
 [Chu Kin Ning <u3557110@connect.hku.hk>](https://github.com/u3557110) | [Leung King To <toleung2@connect.hku.hk>](https://github.com/totoleung) 
