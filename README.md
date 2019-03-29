@@ -11,7 +11,7 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://forthebadge.com)
 
-## Overview
+## Basic Overview
 Many of the Staff Management Systems on the market is not free of charge. This obstructs the use of such systems in small and medium enterprises (SMEs), as resources of these companies are relatively constraints. To solve this, a compact open-source staff management system is being devloped. It is free of charge, and it allows everyone to extend its features. The system is easy to use, any kind of company will manage to use it. 
 
 ## Features
