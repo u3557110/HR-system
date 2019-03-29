@@ -9,16 +9,6 @@
 	 Compact staff management system designed for SMEs
 </h3>
 
-## Team Member
-*Chu Kin Ning<u3557110@connect.hku.hk>
-*Leung King To<toleung2@connect.hku.hk>
-
-## Team
-
-[![Chu Kin Ning](https://avatars1.githubusercontent.com/u/47244396?s=460&v=4)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=460&v=4)](https://github.com/totoleung) 
----|---
-[Chu Kin Ning](https://github.com/u3557110) | [Leung King To](https://github.com/totoleung) 
-
 ## Overview
 Many of the Staff Management Systems on the market is not free of charge. This obstructs the use of such systems in small and medium enterprises (SMEs), as resources of these companies are relatively constraints. To solve this, a compact open-source staff management system is being devloped. It is free of charge, and it allows everyone to extend its features. The system is easy to use, any kind of company will manage to use it. 
 
@@ -53,3 +43,9 @@ Note to Existing Users: After installation, the system can be started by importi
 A video of how to set up a file of a worker and an example of a finalised worker file will be provided in order to help the user to get used to the programme as soon as possible.
 
 ## Future Development
+
+## Team
+
+[![Chu Kin Ning](https://avatars1.githubusercontent.com/u/47244396?s=460&v=4)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=460&v=4)](https://github.com/totoleung) 
+---|---
+[Chu Kin Ning <u3557110@connect.hku.hk>](https://github.com/u3557110) | [Leung King To <toleung2@connect.hku.hk>](https://github.com/totoleung) 
