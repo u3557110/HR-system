@@ -31,15 +31,15 @@ Information of the existing workers can be modified. In case of being fired, rec
 ### Import/Export the Information of Employee(s)
 The programme can import the information of employee from text files. Also, the user can export the data for backup purpose.
 
-## Why the System is Useful
+## The System is Useful
 This system is useful because it can facilitate the managing work of human resources. Searching workers by different attributes such as ages, salary, roles can help to specify a certain group of workers. 
 
 The information of the employees working on the same project can also be obtained for futher evaluation. For example, to determine whether there are too much manpower on a project. Workers can be diverted to other project which is lack of manpower.
 
 Adding self-defined attributes enable the staff management system can work smoothly on different types of workers, companies and industries. The adding and deleting function can help to update the records of workers in real time. Exporting the information of workers out can help to save the information for backup purpose.
 
-## How Users can Get Started with the System
+## Get Started with the System
 The user can first define the amount of the workers and input the basic information of them, such as their name or ID, then the user fills in the default attributes of them. To further alter the details, the user could alter and manipulate the attributes of various worker respectively.
 
-## Where Users can Get Help with the System
+## Seek for Help
 A video of how to set up a file of a worker and an example of a finalised worker file will be provided in order to help the user to get used to the programme as soon as possible.
