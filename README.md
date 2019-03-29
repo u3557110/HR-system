@@ -59,4 +59,4 @@ A video of how to set up a file of a worker and an example of a finalised worker
 ---|---
 [Chu Kin Ning](https://github.com/u3557110) | [Leung King To](https://github.com/totoleung) 
 
-## Lic
+## License
