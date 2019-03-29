@@ -38,7 +38,7 @@ The information of the employees working on the same project can also be obtaine
 
 Adding self-defined attributes enable the staff management system can work smoothly on different types of workers, companies and industries. The adding and deleting function can help to update the records of workers in real time. Exporting the information of workers out can help to save the information for backup purpose.
 
-## Get Started with the System
+## Get Started
 Once the system is installed, information of workers can then be input to the system. Noted that to create a record successfully one must provide the staff number, name. For othere attributes, default values are being applied if they are not specified. The information can be altered or manipulated in future if necessary.
 
 ## Seek for Help
