@@ -49,7 +49,8 @@ A video of how to set up a file of a worker and an example of a finalised worker
 
 ## Further Development
 - Tax calculation for each employee
-- 
+- Show probation period 
+- Show expiry date of related docunments, such as work permits, Visa and contracts. 
 
 ## Team
 
