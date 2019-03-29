@@ -27,6 +27,9 @@ Information of the existing workers can be modified. In case of being fired, rec
 ### Import/Export the Information of Employee(s)
 The programme can import the information of employee from text files. Also, the user can export the data for backup purpose.
 
+### Show the Attendance and Leave of Employee(s)
+The system can show the attendance and leave record of employee. It can also show the remaining days of Annaul Leave a employee own.
+
 ## Highlights of the System
 This system is useful because it can facilitate the managing work of human resources. Searching workers by different attributes such as ages, salary, roles can help to specify a certain group of workers. 
 
@@ -43,7 +46,8 @@ Note to Existing Users: After installation, the system can be started by importi
 A video of how to set up a file of a worker and an example of a finalised worker file will be provided in order to help the user to get used to the programme as soon as possible.
 
 ## Further Development
-- Tax Calculation
+- Tax Calculation for Each Employee
+- 
 
 ## Team
 
