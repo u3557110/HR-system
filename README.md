@@ -23,12 +23,10 @@ The project is used to gather and manage the information about the employees of 
 The user can search for employee(s) by defining the search criteria. The criteria include the employee’s staff number, name, age, role, phone number, address, birthday, gender, HKID number, bank account, salary, full time or part time, leave, suspension, etc. Also, the user can search for all employees with a salary higher than or lower than user input.
 
 ### Manipulate the Information of Employee(s)
-Information of the existing workers can be modified. In case of being fired, records of employee can be deleted and a termination letter can be generated accordingly.
-
-For new employee, records can be created. Moreover, self-defined attributes can also be added. 
+Information of the existing workers can be modified. In case of being fired, records of employee can be deleted and a termination letter can be generated accordingly. For new employee, corresponding record can be created. Moreover, self-defined attributes can also be added. 
 
 ### Import/Export the Information of Employee(s)
-The programme could read the information of the users from text files. Also, the user could export the information of the specific workers for reference.
+The programme can read the information of the users from text files. Also, the user could export the information of the specific workers for reference.
 Due to the scheduled time is limited, the information is stored in an array rather than in a database.
 
 ## Why the project is useful
