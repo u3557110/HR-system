@@ -5,10 +5,6 @@
 		src="https://github.com/u3557110/HR-system/blob/master/LOGO.PNG">
 </h1>
 
-<h3 align="center">
-	 Compact staff management system designed for SMEs
-</h3>
-
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-oxygen.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-water.svg)](https://forthebadge.com)
