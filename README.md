@@ -43,7 +43,7 @@ Note to Existing Users: After installation, the system can be started by importi
 A video of how to set up a file of a worker and an example of a finalised worker file will be provided in order to help the user to get used to the programme as soon as possible.
 
 ## Further Development
-*Tax Calculation
+-Tax Calculation
 
 ## Team
 
