@@ -22,7 +22,7 @@ The staff management system is used to gather and manage the information about t
 ### Searching for Employee(s)
 Record of employee(s) can be searched by defining the search criteria. The criteria include, but is not limited to, the staff number, name, gender, age, job title, telephone number, living district, date of birth, I.D. number, bank account number, range of salary, form of employment (full time / part time), job status (on leave / suspension from work), etc.
 
-### Create Record for New Employee
+### Create Record for New Employee(s)
 For new employee, corresponding record can be created by providing the staff number, name, age, job title, and salary.
 
 ### Manipulate the Information of Employee(s)
@@ -31,14 +31,12 @@ Information of the existing workers can be modified. In case of being fired, rec
 ### Import/Export the Information of Employee(s)
 The programme can import the information of employee from text files. Also, the user can export the data for backup purpose.
 
-## Why the project is useful
+## Why the Project is Useful
 This system is useful because it can facilitate the managing work of human resources. Searching workers by different attributes such as ages, salary, roles can help to specify a certain group of workers. 
 
 The information of the employees working on the same project can also be obtained for futher evaluation. For example, to determine whether there are too much manpower on a project. Workers can be diverted to other project which is lack of manpower.
 
-Adding self-defined attributes enable the staff management system can be worked on different types of companies.
-
-to customize different workers, companies and industries. Allow adding and firing workers could help to update the worker size in the system. Exporting information of workers out could help to save the workers’ information for reference.
+Adding self-defined attributes enable the staff management system can work smoothly on different types of workers, companies and industries. The adding and deleting function can help to update the records of workers in real time. Exporting the information of workers out can help to save the workers’ information for backup.
 
 ## How users can get started with the project
 The user can first define the amount of the workers and input the indicators of them, such as name or ID, then the user fills in the default attributes of them. To further alter the details, the user could alter and manipulate the attributes of various worker respectively.
