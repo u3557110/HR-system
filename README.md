@@ -41,5 +41,9 @@ Adding self-defined attributes enable the staff management system can work smoot
 ## Get Started
 Once the system is installed, information of workers can then be input to the system. Noted that to create a record successfully one must provide the staff number, name. For othere attributes, default values are being applied if they are not specified. The information can be altered or manipulated in future if necessary.
 
+Note to Existing Users: After installation, the system can be started by importing the backup file. 
+
 ## Seek for Help
 A video of how to set up a file of a worker and an example of a finalised worker file will be provided in order to help the user to get used to the programme as soon as possible.
+
+## Future Development
