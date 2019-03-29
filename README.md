@@ -20,7 +20,7 @@ Many of the Staff Management Systems on the market is not free of charge. This o
 The project is used to gather and manage the information about the employees of a company. 
 
 ### Searching for Employee(s)
-Record of employee(s) can be searched by defining the search criteria. The criteria include, but is not limited to, the staff number, name, gender, age, job title, telephone number, living district, date of birth, I.D. number, bank account number, range of salary, form of employment (full time / part time), job status (on leave / suspension from work), etc. Also, the user can search for all employees with a salary higher than or lower than user input.
+Record of employee(s) can be searched by defining the search criteria. The criteria include, but is not limited to, the staff number, name, gender, age, job title, telephone number, living district, date of birth, I.D. number, bank account number, range of salary, form of employment (full time / part time), job status (on leave / suspension from work), etc. 
 
 ### Manipulate the Information of Employee(s)
 Information of the existing workers can be modified. In case of being fired, records of employee can be deleted and a termination letter can be generated accordingly. For new employee, corresponding record can be created. Moreover, self-defined attributes can also be added. 
