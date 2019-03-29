@@ -32,7 +32,7 @@ The system can show the attendance and leave record of employee.
 It can also show the remaining days of Annaul Leave a employee owns. 
 annual leave can be carried forward to the next year.
 
-## Highlights of the System
+## Highlights
 This system is useful because it can facilitate the managing work of human resources. Searching workers by different attributes such as ages, salary, roles can help to specify a certain group of workers. 
 
 The information of the employees working on the same project can also be obtained for futher evaluation. For example, to determine whether there are too much manpower on a project. Workers can be diverted to other project which is lack of manpower.
