@@ -9,6 +9,8 @@
 	 Compact staff management system designed for SMEs
 </h3>
 
+[![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://forthebadge.com)
+
 ## Overview
 Many of the Staff Management Systems on the market is not free of charge. This obstructs the use of such systems in small and medium enterprises (SMEs), as resources of these companies are relatively constraints. To solve this, a compact open-source staff management system is being devloped. It is free of charge, and it allows everyone to extend its features. The system is easy to use, any kind of company will manage to use it. 
 
@@ -28,7 +30,9 @@ Information of the existing workers can be modified. In case of being fired, rec
 The programme can import the information of employee from text files. Also, the user can export the data for backup purpose.
 
 ### Show the Attendance and Leave of Employee(s)
-The system can show the attendance and leave record of employee. It can also show the remaining days of Annaul Leave a employee own.
+The system can show the attendance and leave record of employee. 
+It can also show the remaining days of Annaul Leave a employee owns. 
+annual leave can be carried forward to the next year.
 
 ## Highlights of the System
 This system is useful because it can facilitate the managing work of human resources. Searching workers by different attributes such as ages, salary, roles can help to specify a certain group of workers. 
@@ -54,3 +58,5 @@ A video of how to set up a file of a worker and an example of a finalised worker
 [![Chu Kin Ning](https://avatars1.githubusercontent.com/u/47244396?s=460&v=4)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=460&v=4)](https://github.com/totoleung) 
 ---|---
 [Chu Kin Ning](https://github.com/u3557110) | [Leung King To](https://github.com/totoleung) 
+
+## Lic
