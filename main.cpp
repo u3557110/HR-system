@@ -3,7 +3,7 @@
 //  1340_project
 //
 //  Created by Toto Leung on 17/4/2019.
-//  Copyright © 2019. All rights reserved.
+//  Copyright © 2019 Toto Leung. All rights reserved.
 //
 
 #include <ctime>
@@ -445,13 +445,70 @@ int getAge(int birth_date, int birth_month, int birth_year){
     }
     
     // calculate date, month, year
-    //int calculated_date = current_date - birth_date;
-    //int calculated_month = current_month - birth_month;
+    // int calculated_date = current_date - birth_date;
+    // int calculated_month = current_month - birth_month;
     int calculated_year = current_year - birth_year;
     
     return calculated_year;
 }
 
 void edit_record(StaffRec database[], int &number_of_records, int index){
+    
+    string temp;
+    getline(cin, temp); //Clear Keyboard Buffer
+    
+    cout << "Current Employee ID = " << database[index].staff_no << ", New Employee ID (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != "")
+        database[index].staff_no = temp;
+    
+    cout << "Current First Name = " << database[index].first_name << ", New First Name (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != "")
+        database[index].first_name = temp;
+    
+    cout << "Current Surname = " << database[index].last_name << ", New Surname (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != "")
+        database[index].last_name = temp;
+    
+    cout << "Current Gender = " << database[index].gender << ", New Gender (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != "")
+        database[index].gender = temp;
+    
+    cout << "Current Job Title = " << database[index].job_title << ", New Job Title (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != "")
+        database[index].job_title = temp;
+    
+    cout << "Current Salary = " << database[index].salary << ", New Salary (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != "")
+        database[index].salary = temp;
+    
+    cout << "Current Employment Form = " << database[index].employment_form << ", New Employment Form (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != "")
+        database[index].employment_form = temp;
+    
+    cout << "Current Status = " << database[index].job_status << ", New Status (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != "")
+        database[index].job_status = temp;
+    
+    cout << "Current Phone No. = " << database[index].phone_no << ", New Phone No. (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != "")
+        database[index].phone_no = temp;
+    
+    cout << "Current Date of Birth = " << database[index].birth_day + "-" + database[index].birth_month + "-" + database[index].birth_year << ", New Date of Birth, dd-mm-yyyy (Press Enter if No Change): ";
+    getline(cin, temp);
+    if( temp != ""){
+        database[index].birth_day = temp.substr(0,2);
+        database[index].birth_month = temp.substr(3,2);
+        database[index].birth_year = temp.substr(6,4);
+    }
+    cout << endl;
     
 }
