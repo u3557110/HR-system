@@ -40,9 +40,7 @@ char show_menu();
 
 int add_record(StaffRec database[], int &number_of_records);
 
-void show_database(StaffRec database[], int number_of_records);
-
-void test_mode(StaffRec database[], int &number_of_records);
+void show_database(StaffRec * &database, int &number_of_records, int capacity);
 
 int file_import(StaffRec * &database, int &number_of_records, int &capacity);
 
@@ -56,7 +54,9 @@ void grow_array(StaffRec * &database, int &capacity, int increment);
 
 int getAge(int birth_date, int birth_month, int birth_year);
 
-void edit_record(StaffRec database[], int &number_of_records, int index);
+void edit_record(StaffRec database[], int index);
+
+void delete_record(StaffRec * &database, int &number_of_records, int index, int capacity);
 
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -77,7 +77,7 @@ int main(){
                 break;
             
             case '2':
-                show_database(database, number_of_records);                     //print records
+                show_database(database, number_of_records, capacity);                     //print records
                 break;
             
             case '3':                                                           //add record
@@ -92,10 +92,6 @@ int main(){
                 break;
             
             case '5':
-                break;
-                
-            case '9':
-                test_mode(database, number_of_records);                         //
                 break;
             
             default:
@@ -118,11 +114,10 @@ char show_menu(){
     cout << "2. Show Record" << endl;
     cout << "3. Add Record" << endl;
     cout << "4. Export Record" << endl;
-    cout << "5. Edit Record" << endl;
-    cout << "6. Search Record" << endl;
-    cout << "7. Sort Record" << endl;
-    cout << "8. Setting" << endl;
-    cout << "9. Test Mode" << endl;
+    //cout << "5. Edit Record" << endl;
+    cout << "5. Search Record" << endl;
+    cout << "6. Sort Record" << endl;
+    cout << "7. Setting" << endl;
     cout << "0. Exit" << endl;
     cout << endl << "Your Choice: ";
     
@@ -174,12 +169,13 @@ int add_record(StaffRec database[], int &number_of_records){
 
 }
 
-void show_database(StaffRec database[], int number_of_records){
+void show_database(StaffRec * &database, int &number_of_records, int capacity){
     
+    int choice;
     int records_per_page = 10;
     int n = 0;
 
-    char user_input = 'a';
+    char user_input = '\0';
     
     while(user_input != 'q' && user_input != 'Q'){
         
@@ -197,12 +193,12 @@ void show_database(StaffRec database[], int number_of_records){
         cout << setw(8)  << "Gender";
         cout << setw(11) << "Job Title";
         cout << setw(9)  << "Salary";
-        cout << setw(5)  << "Form";
+        cout << setw(6)  << "Form";
         cout << setw(9)  << "Status";
-        cout << setw(10) << "Phone No.";
+        cout << setw(11) << "Phone No.";
         cout << setw(15) << "Date of Birth";
         cout << setw(5)  << "Age" << endl;
-        cout << "-----------------------------------------------------------------------------------------------------------" << endl;
+        cout << "-------------------------------------------------------------------------------------------------------------" << endl;
         
         for (int i = 0; i < records_per_page; i++){
             if (n+i < number_of_records){
@@ -213,15 +209,17 @@ void show_database(StaffRec database[], int number_of_records){
                 cout << setw(8)  << database[n+i].gender;
                 cout << setw(11) << database[n+i].job_title;
                 cout << setw(9)  << database[n+i].salary;
-                cout << setw(5)  << database[n+i].employment_form;
+                cout << setw(6)  << database[n+i].employment_form;
                 cout << setw(9)  << database[n+i].job_status;
-                cout << setw(10) << database[n+i].phone_no;
+                cout << setw(6)  << database[n+i].phone_no.substr(0, 4);
+                cout << setw(1)  << "-" ;
+                cout << setw(4)  << database[n+i].phone_no.substr(4, 4);
                 cout << setw(15) << database[n+i].birth_day + "-" + database[n+i].birth_month + "-" + database[n+i].birth_year;
                 cout << setw(5)  << getAge(stoi(database[n+i].birth_day), stoi(database[n+i].birth_month), stoi(database[n+i].birth_year)) << endl;
             }
         }
         
-        cout << endl << "Q = Quit. E = Edit. N = Next. P = Previous. Your Choce: ";
+        cout << endl << "Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. Your Choce: ";
         cin >> user_input;
         cout << endl;
         
@@ -234,36 +232,19 @@ void show_database(StaffRec database[], int number_of_records){
         }
         
         if (user_input == 'e' || user_input == 'E'){
-            int choice;
             cout << "Which item you want to edit: " ;
             cin >> choice;
-            edit_record(database, number_of_records, n + choice - 1);
+            edit_record(database, n + choice - 1);
+        }
+        
+        if (user_input == 'd' || user_input == 'D'){
+            cout << "Which item you want to delete: " ;
+            cin >> choice;
+            delete_record(database, number_of_records, n + choice - 1, capacity);
         }
     }
     
     cout << endl;
-}
-
-void test_mode(StaffRec database[], int &number_of_records){
-    
-    int i = number_of_records;
-    
-    database[i].staff_no = "00000001";
-    database[i].first_name = "Shun Wing";
-    database[i].last_name = "Wong";
-    database[i].gender = "M" ;
-    database[i].job_title = "Engineer";
-    database[i].salary = "20000";
-    database[i].employment_form = "FT";
-    database[i].job_status = "Normal";
-    database[i].phone_no = "22333322";
-    database[i].birth_day = "12";
-    database[i].birth_month = "04";
-    database[i].birth_year = "1998";
-    
-    cout << "Database is initialized." << endl << endl;;
-    
-    number_of_records++;
 }
 
 int file_import(StaffRec * &database, int &number_of_records, int &capacity){
@@ -416,9 +397,6 @@ void grow_array(StaffRec * &old_database, int &capacity, int increment){
     capacity += increment;
     
     cout << "System Message: Capacity of database has been enlarged to " << capacity << "!" << endl;
-
-    //cout <<endl <<"------------------------------------------------------------------------"<<endl;
-    //show_database(old_database, 3);
     
 }
 
@@ -452,7 +430,7 @@ int getAge(int birth_date, int birth_month, int birth_year){
     return calculated_year;
 }
 
-void edit_record(StaffRec database[], int &number_of_records, int index){
+void edit_record(StaffRec database[], int index){
     
     string temp;
     getline(cin, temp); //Clear Keyboard Buffer
@@ -509,6 +487,25 @@ void edit_record(StaffRec database[], int &number_of_records, int index){
         database[index].birth_month = temp.substr(3,2);
         database[index].birth_year = temp.substr(6,4);
     }
-    cout << endl;
     
+    cout << endl;
+}
+
+void delete_record(StaffRec * &old_database, int &number_of_records, int del_index, int capacity){
+    
+    StaffRec * new_database = new StaffRec[capacity];
+    
+    for (int i = 0; i < del_index; i++)
+        new_database[i] = old_database[i];
+    
+    for (int i = del_index + 1; i < number_of_records; i++)
+        new_database[i - 1] = old_database[i];
+    
+    delete [] old_database;
+    old_database = new_database;
+    
+    number_of_records--;
+    
+    cout << "System Message: Item "<< del_index << " is Successfully Deleted!" << endl;
+    cout << endl;
 }
