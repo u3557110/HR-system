@@ -6,9 +6,11 @@
 //  Copyright © 2019 Toto Leung. All rights reserved.
 //
 
+#include <ctime>
+#include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <string>
-#include <fstream>
 
 using namespace std;
 
@@ -26,6 +28,10 @@ struct StaffRec {
     //string address;         //Address
     //string id_no;           //Id Card Number
     //string bank_no;         //Bank Account Number
+    
+    string birth_day;
+    string birth_month;
+    string birth_year;
 };
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -48,6 +54,7 @@ void grow_array(StaffRec * &database, int &capacity, int increment);
 
 //void grow_array(StaffRec database[], int &capacity, int increment);
 
+int getAge(int birth_date, int birth_month, int birth_year);
 
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -145,6 +152,11 @@ int add_record(StaffRec database[], int &number_of_records){
     getline(cin, database[number_of_records].job_status);
     cout << "Please enter Phone Number:" << endl;
     getline(cin, database[number_of_records].phone_no);
+    cout << "Please enter Date of Birth (dd-mm-yyyy):" << endl;
+    getline(cin, temp);
+    database[number_of_records].birth_day = temp.substr(0,2);
+    database[number_of_records].birth_month = temp.substr(3,2);
+    database[number_of_records].birth_year = temp.substr(6,4);
 
     //cout << "Please enter Address:" << endl;
     //cout << "Please enter ID:" << endl;
@@ -158,26 +170,31 @@ int add_record(StaffRec database[], int &number_of_records){
 
 void show_database(StaffRec database[], int number_of_records){
     
-    cout << "Staff No.\t\t";
-    cout << "First Name\t\t";
-    cout << "Last Name\t";
-    cout << "Gender\t";
-    cout << "Job Title\t";
-    cout << "Salary\t";
-    cout << "Form\t";
-    cout << "Status\t";
-    cout << "Phone Number" << endl;
+    cout << setw(12) << "Employee ID";
+    cout << setw(12) << "First Name";
+    cout << setw(9) << "Surname";
+    cout << setw(8)  << "Gender";
+    cout << setw(11) << "Job Title";
+    cout << setw(9)  << "Salary";
+    cout << setw(5)  << "Form";
+    cout << setw(9)  << "Status";
+    cout << setw(10) << "Phone No.";
+    cout << setw(15) << "Date of Birth";
+    cout << setw(5)  << "Age" << endl;
+    cout << "-----------------------------------------------------------------------------------------------------------" << endl;
     
     for (int i = 0; i < number_of_records; i++){
-        cout << database[i].staff_no << "\t\t";
-        cout << database[i].first_name << "\t\t";
-        cout << database[i].last_name << "\t\t";
-        cout << database[i].gender << "\t\t";
-        cout << database[i].job_title << "\t";
-        cout << database[i].salary << "\t";
-        cout << database[i].employment_form << "\t\t";
-        cout << database[i].job_status << "\t";
-        cout << database[i].phone_no << endl;
+        cout << setw(12) << database[i].staff_no;
+        cout << setw(12) << database[i].first_name;
+        cout << setw(9) << database[i].last_name;
+        cout << setw(8)  << database[i].gender;
+        cout << setw(11) << database[i].job_title;
+        cout << setw(9)  << database[i].salary;
+        cout << setw(5)  << database[i].employment_form;
+        cout << setw(9)  << database[i].job_status;
+        cout << setw(10) << database[i].phone_no;
+        cout << setw(15) << database[i].birth_day + "-" + database[i].birth_month + "-" + database[i].birth_year;
+        cout << setw(5)  << getAge(stoi(database[i].birth_day), stoi(database[i].birth_month), stoi(database[i].birth_year)) << endl;
     }
     
     cout << endl;
@@ -196,6 +213,9 @@ void test_mode(StaffRec database[], int &number_of_records){
     database[i].employment_form = "FT";
     database[i].job_status = "Normal";
     database[i].phone_no = "22333322";
+    database[i].birth_day = "12";
+    database[i].birth_month = "04";
+    database[i].birth_year = "1998";
     
     cout << "Database is initialized." << endl << endl;;
     
@@ -287,6 +307,18 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity){
         //cout << temp.substr(i, j - i) << endl;
         i = ++j;
         
+        string date_of_birth;
+        
+        j = temp.find('\t', i);
+        date_of_birth = temp.substr(i, j - i);
+    
+        database[k].birth_day = date_of_birth.substr(0,2);
+        database[k].birth_month = date_of_birth.substr(3,2);
+        database[k].birth_year = date_of_birth.substr(6,4);
+        
+        //cout << temp.substr(i, j - i) << endl;
+        i = ++j;
+        
         //cout << "File Successfully Imported!" << endl;
         //cout << endl;
         
@@ -325,7 +357,8 @@ int file_export(StaffRec database[], int number_of_records){
     output_file << "Salary\t";
     output_file << "Form\t";
     output_file << "Status\t";
-    output_file << "Phone No." << endl;
+    output_file << "Phone No.\t";
+    output_file << "Date of Birth" << endl;
     
     
     for (int i = 0; i < number_of_records; i++){
@@ -338,7 +371,8 @@ int file_export(StaffRec database[], int number_of_records){
         output_file << database[i].salary << "\t";
         output_file << database[i].employment_form << "\t";
         output_file << database[i].job_status << "\t";
-        output_file << database[i].phone_no << "\t" << endl;
+        output_file << database[i].phone_no << "\t";
+        output_file << database[i].birth_day + "-" + database[i].birth_month + "-" + database[i].birth_year<< "\t" << endl;
     }
     
     cout << "File Successfully Exported!" << endl;
@@ -367,4 +401,34 @@ void grow_array(StaffRec * &old_database, int &capacity, int increment){
     //cout <<endl <<"------------------------------------------------------------------------"<<endl;
     //show_database(old_database, 3);
     
+}
+
+int getAge(int birth_date, int birth_month, int birth_year){
+    
+    time_t current_time = time(0);
+    tm* now = localtime(&current_time);
+    
+    int current_date = now -> tm_mday;
+    int current_month = now -> tm_mon + 1;
+    int current_year = now -> tm_year + 1900;
+    
+    // days of every month
+    int month[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    
+    if (birth_date > current_date) {
+        current_date = current_date + month[birth_month - 1];
+        current_month = current_month - 1;
+    }
+    
+    if (birth_month > current_month) {
+        current_year = current_year - 1;
+        current_month = current_month + 12;
+    }
+    
+    // calculate date, month, year
+    //int calculated_date = current_date - birth_date;
+    //int calculated_month = current_month - birth_month;
+    int calculated_year = current_year - birth_year;
+    
+    return calculated_year;
 }
