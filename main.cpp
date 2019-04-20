@@ -3,7 +3,7 @@
 //  1340_project
 //
 //  Created by Toto Leung on 17/4/2019.
-//  Copyright © 2019 Toto Leung. All rights reserved.
+//  Copyright © 2019. All rights reserved.
 //
 
 #include <ctime>
@@ -19,15 +19,15 @@ struct StaffRec {
     string first_name;      //First Name
     string last_name;       //Last Name
     string gender;          //Gender
-    //string age;             //Age
+    //string age;           //Age
     string job_title;       //Job Title
     string salary;          //Salary
     string employment_form; //Full time or part time
     string job_status;      //on leave or suspension from work
     string phone_no;        //Phone Number
-    //string address;         //Address
-    //string id_no;           //Id Card Number
-    //string bank_no;         //Bank Account Number
+    //string address;       //Address
+    //string id_no;         //Id Card Number
+    //string bank_no;       //Bank Account Number
     
     string birth_day;
     string birth_month;
@@ -56,6 +56,8 @@ void grow_array(StaffRec * &database, int &capacity, int increment);
 
 int getAge(int birth_date, int birth_month, int birth_year);
 
+void edit_record(StaffRec database[], int &number_of_records, int index);
+
 //-------------------------------------------------------------------------------------------------------------------
 
 int main(){
@@ -71,26 +73,29 @@ int main(){
     while(user_input != '0'){
         switch (user_input){
             case '1':
-                file_import(database, number_of_records, capacity);
+                file_import(database, number_of_records, capacity);             //import from files
                 break;
             
             case '2':
-                show_database(database, number_of_records);
+                show_database(database, number_of_records);                     //print records
                 break;
             
-            case '3':
-                if(number_of_records >= capacity)
-                    grow_array(database, capacity, increment); //grow
+            case '3':                                                           //add record
+                if(number_of_records >= capacity)                               //expand database if needded
+                    grow_array(database, capacity, increment);
                     
                 add_record(database, number_of_records);
                 break;
                 
             case '4':
-                file_export(database, number_of_records);
+                file_export(database, number_of_records);                       //export to file
                 break;
             
+            case '5':
+                break;
+                
             case '9':
-                test_mode(database, number_of_records);
+                test_mode(database, number_of_records);                         //
                 break;
             
             default:
@@ -116,6 +121,7 @@ char show_menu(){
     cout << "5. Edit Record" << endl;
     cout << "6. Search Record" << endl;
     cout << "7. Sort Record" << endl;
+    cout << "8. Setting" << endl;
     cout << "9. Test Mode" << endl;
     cout << "0. Exit" << endl;
     cout << endl << "Your Choice: ";
@@ -170,31 +176,69 @@ int add_record(StaffRec database[], int &number_of_records){
 
 void show_database(StaffRec database[], int number_of_records){
     
-    cout << setw(12) << "Employee ID";
-    cout << setw(12) << "First Name";
-    cout << setw(9) << "Surname";
-    cout << setw(8)  << "Gender";
-    cout << setw(11) << "Job Title";
-    cout << setw(9)  << "Salary";
-    cout << setw(5)  << "Form";
-    cout << setw(9)  << "Status";
-    cout << setw(10) << "Phone No.";
-    cout << setw(15) << "Date of Birth";
-    cout << setw(5)  << "Age" << endl;
-    cout << "-----------------------------------------------------------------------------------------------------------" << endl;
+    int records_per_page = 10;
+    int n = 0;
+
+    char user_input = 'a';
     
-    for (int i = 0; i < number_of_records; i++){
-        cout << setw(12) << database[i].staff_no;
-        cout << setw(12) << database[i].first_name;
-        cout << setw(9) << database[i].last_name;
-        cout << setw(8)  << database[i].gender;
-        cout << setw(11) << database[i].job_title;
-        cout << setw(9)  << database[i].salary;
-        cout << setw(5)  << database[i].employment_form;
-        cout << setw(9)  << database[i].job_status;
-        cout << setw(10) << database[i].phone_no;
-        cout << setw(15) << database[i].birth_day + "-" + database[i].birth_month + "-" + database[i].birth_year;
-        cout << setw(5)  << getAge(stoi(database[i].birth_day), stoi(database[i].birth_month), stoi(database[i].birth_year)) << endl;
+    while(user_input != 'q' && user_input != 'Q'){
+        
+        cout << "Page: " << (n/10 + 1) << '/' ;
+        
+        if (number_of_records%records_per_page != 0)
+            cout << (number_of_records/records_per_page + 1) << endl;
+        else
+            cout << (number_of_records/records_per_page) << endl;
+        
+        cout << setw(2)  << "#";
+        cout << setw(12) << "Employee ID";
+        cout << setw(12) << "First Name";
+        cout << setw(9)  << "Surname";
+        cout << setw(8)  << "Gender";
+        cout << setw(11) << "Job Title";
+        cout << setw(9)  << "Salary";
+        cout << setw(5)  << "Form";
+        cout << setw(9)  << "Status";
+        cout << setw(10) << "Phone No.";
+        cout << setw(15) << "Date of Birth";
+        cout << setw(5)  << "Age" << endl;
+        cout << "-----------------------------------------------------------------------------------------------------------" << endl;
+        
+        for (int i = 0; i < records_per_page; i++){
+            if (n+i < number_of_records){
+                cout << setw(2)  << i + 1;
+                cout << setw(12) << database[n+i].staff_no;
+                cout << setw(12) << database[n+i].first_name;
+                cout << setw(9)  << database[n+i].last_name;
+                cout << setw(8)  << database[n+i].gender;
+                cout << setw(11) << database[n+i].job_title;
+                cout << setw(9)  << database[n+i].salary;
+                cout << setw(5)  << database[n+i].employment_form;
+                cout << setw(9)  << database[n+i].job_status;
+                cout << setw(10) << database[n+i].phone_no;
+                cout << setw(15) << database[n+i].birth_day + "-" + database[n+i].birth_month + "-" + database[n+i].birth_year;
+                cout << setw(5)  << getAge(stoi(database[n+i].birth_day), stoi(database[n+i].birth_month), stoi(database[n+i].birth_year)) << endl;
+            }
+        }
+        
+        cout << endl << "Q = Quit. E = Edit. N = Next. P = Previous. Your Choce: ";
+        cin >> user_input;
+        cout << endl;
+        
+        if (user_input == 'n' || user_input == 'N'){
+            n += records_per_page;
+        }
+        
+        if (user_input == 'p' || user_input == 'P'){
+            n -= records_per_page;
+        }
+        
+        if (user_input == 'e' || user_input == 'E'){
+            int choice;
+            cout << "Which item you want to edit: " ;
+            cin >> choice;
+            edit_record(database, number_of_records, n + choice - 1);
+        }
     }
     
     cout << endl;
@@ -239,7 +283,7 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity){
     //getline(input_file, temp);
     //cout << temp << endl;
     
-    int k = 0;
+    int k = number_of_records;
     
     while(getline(input_file, temp)){
         
@@ -254,73 +298,49 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity){
             //show_database(database, number_of_records);
         }
         
-        j = temp.find('\t', i);
+        j = int(temp.find('\t', i));
         database[k].staff_no = temp.substr(i, j - i);
-        //cout << temp.substr(i, j - i) << endl;
-        //cout << " i = " << i << endl;
-        //cout << " j = " << j << endl;
         i = ++j;
         
-        j = temp.find('\t', i);
+        j = int(temp.find('\t', i));
         database[k].first_name = temp.substr(i, j - i);
-        //cout << temp.substr(i, j - i) << endl;
-        //cout << " i = " << i << endl;
-        //cout << " j = " << j << endl;
         i = ++j;
         
-        j = temp.find('\t', i);
+        j = int(temp.find('\t', i));
         database[k].last_name = temp.substr(i, j - i);
-        //cout << temp.substr(i, j - i) << endl;
-        //cout << " i = " << i << endl;
-        //cout << " j = " << j << endl;
         i = ++j;
         
-        j = temp.find('\t', i);
+        j = int(temp.find('\t', i));
         database[k].gender = temp.substr(i, j - i);
-        //cout << temp.substr(i, j - i) << endl;
-        //cout << " i = " << i << endl;
-        //cout << " j = " << j << endl;
         i = ++j;
         
-        j = temp.find('\t', i);
+        j = int(temp.find('\t', i));
         database[k].job_title = temp.substr(i, j - i);
-        //cout << temp.substr(i, j - i) << endl;
         i = ++j;
         
-        j = temp.find('\t', i);
+        j = int(temp.find('\t', i));
         database[k].salary = temp.substr(i, j - i);
-        //cout << temp.substr(i, j - i) << endl;
         i = ++j;
         
-        j = temp.find('\t', i);
+        j = int(temp.find('\t', i));
         database[k].employment_form = temp.substr(i, j - i);
-        //cout << temp.substr(i, j - i) << endl;
         i = ++j;
         
-        j = temp.find('\t', i);
+        j = int(temp.find('\t', i));
         database[k].job_status = temp.substr(i, j - i);
-        //cout << temp.substr(i, j - i) << endl;
         i = ++j;
         
-        j = temp.find('\t', i);
+        j = int(temp.find('\t', i));
         database[k].phone_no = temp.substr(i, j - i);
-        //cout << temp.substr(i, j - i) << endl;
         i = ++j;
         
-        string date_of_birth;
-        
-        j = temp.find('\t', i);
-        date_of_birth = temp.substr(i, j - i);
-    
+        j = int(temp.find('\t', i));
+        string date_of_birth = temp.substr(i, j - i);
         database[k].birth_day = date_of_birth.substr(0,2);
         database[k].birth_month = date_of_birth.substr(3,2);
         database[k].birth_year = date_of_birth.substr(6,4);
-        
         //cout << temp.substr(i, j - i) << endl;
         i = ++j;
-        
-        //cout << "File Successfully Imported!" << endl;
-        //cout << endl;
         
         k++;
         number_of_records++;
@@ -396,7 +416,6 @@ void grow_array(StaffRec * &old_database, int &capacity, int increment){
     capacity += increment;
     
     cout << "System Message: Capacity of database has been enlarged to " << capacity << "!" << endl;
-    cout << endl;
 
     //cout <<endl <<"------------------------------------------------------------------------"<<endl;
     //show_database(old_database, 3);
@@ -431,4 +450,8 @@ int getAge(int birth_date, int birth_month, int birth_year){
     int calculated_year = current_year - birth_year;
     
     return calculated_year;
+}
+
+void edit_record(StaffRec database[], int &number_of_records, int index){
+    
 }
