@@ -353,7 +353,7 @@ void show_database(StaffRec * &database, int &number_of_records, int capacity){
 
 void show_search_database(StaffRec * &database, int &number_of_records, int capacity, int &number_of_deletion, string * &id_of_deletion){
     
-    int choice;
+    string choice;
     int records_per_page = 10;
     int n = 0;
     
@@ -378,17 +378,27 @@ void show_search_database(StaffRec * &database, int &number_of_records, int capa
         if (user_input == 'e' || user_input == 'E'){
             cout << "Which item you want to edit: " ;
             cin >> choice;
-            edit_record(database, n + choice - 1);
+            edit_record(database, n + stoi(choice) - 1);
         }
         
         if (user_input == 'd' || user_input == 'D'){
-            cout << "Which item you want to delete: " ;
+            cout << "Which item you want to delete (input 'a' for all): " ;
             cin >> choice;
             
-            id_of_deletion[number_of_deletion] = database[choice-1].staff_no;
-            delete_record(database, number_of_records, n + choice - 1, capacity);
+            if(choice != "a"){
+                id_of_deletion[number_of_deletion] = database[stoi(choice) - 1].staff_no;
+                delete_record(database, number_of_records, n + stoi(choice) - 1, capacity);
             
-            number_of_deletion++;
+                number_of_deletion++;
+            }else{
+                for (int i = 0; i < number_of_records; i++){
+                    id_of_deletion[i] = database[i].staff_no;
+                    number_of_deletion++;
+                }
+                for (int i = 0; i < number_of_deletion; i++)
+                    delete_record(database, number_of_records, 0, capacity);
+            }
+            cout << endl;
         }
     }
     
@@ -403,8 +413,9 @@ char print_table(StaffRec database[], int number_of_records, int records_per_pag
     
     if (number_of_records%records_per_page != 0)
         cout << (number_of_records/records_per_page + 1) << endl;
-    else
-        cout << (number_of_records/records_per_page) << endl;
+    else{
+        cout << (number_of_records/records_per_page == 0 ? 1 : number_of_records/records_per_page) << endl;
+    }
     
     cout << setw(2)  << "#";
     cout << setw(12) << "Employee ID";
@@ -562,13 +573,12 @@ void delete_record(StaffRec * &old_database, int &number_of_records, int del_ind
     for (int i = del_index + 1; i < number_of_records; i++)
         new_database[i - 1] = old_database[i];
     
+    cout << "System Message: Item with ID = "<< old_database[del_index].staff_no << " is deleted!" << endl;
+
     delete [] old_database;
     old_database = new_database;
     
     number_of_records--;
-    
-    cout << "System Message: Item "<< del_index << " is Successfully Deleted!" << endl;
-    cout << endl;
 }
 
 void search_record(StaffRec * &old_database, int &number_of_records, int capacity){
@@ -636,10 +646,10 @@ void search_match_string (StaffRec * &old_database, int &number_of_records, int 
     }
     
     show_search_database(search_result, number_of_result, capacity, number_of_deletion, id_of_deletion);
-    
+
     if (number_of_deletion != 0){
         for (int i = 0; i < number_of_deletion; i++){                           //number of deletion e.g. 3 items to be deleted
-            for (int j = 0; i < number_of_records; j++){                       //loop the whole database
+            for (int j = 0; i < number_of_records; j++){                        //loop the whole database
                 if (id_of_deletion[i] == old_database[j].staff_no){
                     delete_record(old_database, number_of_records, j, capacity);
                     break;
