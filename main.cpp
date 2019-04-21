@@ -42,21 +42,28 @@ int add_record(StaffRec database[], int &number_of_records);
 
 void show_database(StaffRec * &database, int &number_of_records, int capacity);
 
-int file_import(StaffRec * &database, int &number_of_records, int &capacity);
+void show_search_database(StaffRec * &database, int &number_of_records, int capacity, int &number_of_deletion, string * &id_of_deletion);
 
-//int file_import(StaffRec database[], int &number_of_records, int &capacity);
+char print_table(StaffRec database[], int number_of_records, int records_per_page, int n);
+
+int file_import(StaffRec * &database, int &number_of_records, int &capacity);
 
 int file_export(StaffRec database[], int number_of_records);
 
 void grow_array(StaffRec * &database, int &capacity, int increment);
-
-//void grow_array(StaffRec database[], int &capacity, int increment);
 
 int getAge(int birth_date, int birth_month, int birth_year);
 
 void edit_record(StaffRec database[], int index);
 
 void delete_record(StaffRec * &database, int &number_of_records, int index, int capacity);
+
+void search_record(StaffRec * &database, int &number_of_records, int capacity);
+
+void search_match_string (StaffRec * &database, int &number_of_records, int capacity, char choice, string keyword);
+
+void search_in_range (StaffRec * &database, int &number_of_records, int capacity);
+
 
 //-------------------------------------------------------------------------------------------------------------------
 
@@ -73,15 +80,15 @@ int main(){
     while(user_input != '0'){
         switch (user_input){
             case '1':
-                file_import(database, number_of_records, capacity);             //import from files
+                file_import(database, number_of_records, capacity);                 //import from files
                 break;
             
             case '2':
-                show_database(database, number_of_records, capacity);                     //print records
+                show_database(database, number_of_records, capacity);               //print records
                 break;
             
-            case '3':                                                           //add record
-                if(number_of_records >= capacity)                               //expand database if needded
+            case '3':                                                               //add record
+                if(number_of_records >= capacity)                                   //expand database if needded
                     grow_array(database, capacity, increment);
                     
                 add_record(database, number_of_records);
@@ -92,6 +99,7 @@ int main(){
                 break;
             
             case '5':
+                search_record(database, number_of_records, capacity);
                 break;
             
             default:
@@ -102,149 +110,6 @@ int main(){
     }
     
     cout << "bye bye!" << endl;
-}
-
-char show_menu(){
-    
-    char input;
-    
-    cout << "Welcome to Staff Management System." << endl;
-    cout << "Please select:" << endl;
-    cout << "1. Import Record" << endl;
-    cout << "2. Show Record" << endl;
-    cout << "3. Add Record" << endl;
-    cout << "4. Export Record" << endl;
-    //cout << "5. Edit Record" << endl;
-    cout << "5. Search Record" << endl;
-    cout << "6. Sort Record" << endl;
-    cout << "7. Setting" << endl;
-    cout << "0. Exit" << endl;
-    cout << endl << "Your Choice: ";
-    
-    cin >> input;
-    
-    cout << endl;
-    
-    return input;
-    
-}
-
-int add_record(StaffRec database[], int &number_of_records){
-    
-    string temp;
-    getline(cin, temp); //Clear Keyboard Buffer
-    
-    cout << "Please enter Staff Number:" << endl;
-    getline(cin, database[number_of_records].staff_no);
-    cout << "Please enter First Name:" << endl;
-    getline(cin, database[number_of_records].first_name);
-    cout << "Please enter Last Name:" << endl;
-    getline(cin, database[number_of_records].last_name);
-    cout << "Please enter Gender:" << endl;
-    getline(cin, database[number_of_records].gender);
-    //cout << "Please enter Age:" << endl;
-    cout << "Please enter Job Title:" << endl;
-    getline(cin, database[number_of_records].job_title);
-    cout << "Please enter Salary:" << endl;
-    getline(cin, database[number_of_records].salary);
-    cout << "Please enter Form of Employment:" << endl;
-    getline(cin, database[number_of_records].employment_form);
-    cout << "Please enter Job Status:" << endl;
-    getline(cin, database[number_of_records].job_status);
-    cout << "Please enter Phone Number:" << endl;
-    getline(cin, database[number_of_records].phone_no);
-    cout << "Please enter Date of Birth (dd-mm-yyyy):" << endl;
-    getline(cin, temp);
-    database[number_of_records].birth_day = temp.substr(0,2);
-    database[number_of_records].birth_month = temp.substr(3,2);
-    database[number_of_records].birth_year = temp.substr(6,4);
-
-    //cout << "Please enter Address:" << endl;
-    //cout << "Please enter ID:" << endl;
-    //cout << "Please enter Bank Account Number:" << endl;
-    
-    number_of_records++;
-    
-    return 1;
-
-}
-
-void show_database(StaffRec * &database, int &number_of_records, int capacity){
-    
-    int choice;
-    int records_per_page = 10;
-    int n = 0;
-
-    char user_input = '\0';
-    
-    while(user_input != 'q' && user_input != 'Q'){
-        
-        cout << "Page: " << (n/10 + 1) << '/' ;
-        
-        if (number_of_records%records_per_page != 0)
-            cout << (number_of_records/records_per_page + 1) << endl;
-        else
-            cout << (number_of_records/records_per_page) << endl;
-        
-        cout << setw(2)  << "#";
-        cout << setw(12) << "Employee ID";
-        cout << setw(12) << "First Name";
-        cout << setw(9)  << "Surname";
-        cout << setw(8)  << "Gender";
-        cout << setw(11) << "Job Title";
-        cout << setw(9)  << "Salary";
-        cout << setw(6)  << "Form";
-        cout << setw(9)  << "Status";
-        cout << setw(11) << "Phone No.";
-        cout << setw(15) << "Date of Birth";
-        cout << setw(5)  << "Age" << endl;
-        cout << "-------------------------------------------------------------------------------------------------------------" << endl;
-        
-        for (int i = 0; i < records_per_page; i++){
-            if (n+i < number_of_records){
-                cout << setw(2)  << i + 1;
-                cout << setw(12) << database[n+i].staff_no;
-                cout << setw(12) << database[n+i].first_name;
-                cout << setw(9)  << database[n+i].last_name;
-                cout << setw(8)  << database[n+i].gender;
-                cout << setw(11) << database[n+i].job_title;
-                cout << setw(9)  << database[n+i].salary;
-                cout << setw(6)  << database[n+i].employment_form;
-                cout << setw(9)  << database[n+i].job_status;
-                cout << setw(6)  << database[n+i].phone_no.substr(0, 4);
-                cout << setw(1)  << "-" ;
-                cout << setw(4)  << database[n+i].phone_no.substr(4, 4);
-                cout << setw(15) << database[n+i].birth_day + "-" + database[n+i].birth_month + "-" + database[n+i].birth_year;
-                cout << setw(5)  << getAge(stoi(database[n+i].birth_day), stoi(database[n+i].birth_month), stoi(database[n+i].birth_year)) << endl;
-            }
-        }
-        
-        cout << endl << "Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. Your Choce: ";
-        cin >> user_input;
-        cout << endl;
-        
-        if (user_input == 'n' || user_input == 'N'){
-            n += records_per_page;
-        }
-        
-        if (user_input == 'p' || user_input == 'P'){
-            n -= records_per_page;
-        }
-        
-        if (user_input == 'e' || user_input == 'E'){
-            cout << "Which item you want to edit: " ;
-            cin >> choice;
-            edit_record(database, n + choice - 1);
-        }
-        
-        if (user_input == 'd' || user_input == 'D'){
-            cout << "Which item you want to delete: " ;
-            cin >> choice;
-            delete_record(database, number_of_records, n + choice - 1, capacity);
-        }
-    }
-    
-    cout << endl;
 }
 
 int file_import(StaffRec * &database, int &number_of_records, int &capacity){
@@ -384,6 +249,202 @@ int file_export(StaffRec database[], int number_of_records){
     return 1;
 }
 
+char show_menu(){
+    
+    char input;
+    
+    cout << "Welcome to Staff Management System." << endl;
+    cout << "Please select:" << endl;
+    cout << "1. Import Record" << endl;
+    cout << "2. Show Record" << endl;
+    cout << "3. Add Record" << endl;
+    cout << "4. Export Record" << endl;
+    cout << "5. Search Record" << endl;
+    cout << "6. Sort Record" << endl;
+    cout << "7. Setting" << endl;
+    cout << "0. Exit" << endl;
+    cout << endl << "Your Choice: ";
+    
+    cin >> input;
+    
+    cout << endl;
+    
+    return input;
+    
+}
+
+int add_record(StaffRec database[], int &number_of_records){
+    
+    string temp;
+    getline(cin, temp); //Clear Keyboard Buffer
+    
+    cout << "Please enter Staff Number:" << endl;
+    getline(cin, database[number_of_records].staff_no);
+    cout << "Please enter First Name:" << endl;
+    getline(cin, database[number_of_records].first_name);
+    cout << "Please enter Last Name:" << endl;
+    getline(cin, database[number_of_records].last_name);
+    cout << "Please enter Gender:" << endl;
+    getline(cin, database[number_of_records].gender);
+    //cout << "Please enter Age:" << endl;
+    cout << "Please enter Job Title:" << endl;
+    getline(cin, database[number_of_records].job_title);
+    cout << "Please enter Salary:" << endl;
+    getline(cin, database[number_of_records].salary);
+    cout << "Please enter Form of Employment:" << endl;
+    getline(cin, database[number_of_records].employment_form);
+    cout << "Please enter Job Status:" << endl;
+    getline(cin, database[number_of_records].job_status);
+    cout << "Please enter Phone Number:" << endl;
+    getline(cin, database[number_of_records].phone_no);
+    cout << "Please enter Date of Birth (dd-mm-yyyy):" << endl;
+    getline(cin, temp);
+    database[number_of_records].birth_day = temp.substr(0,2);
+    database[number_of_records].birth_month = temp.substr(3,2);
+    database[number_of_records].birth_year = temp.substr(6,4);
+
+    //cout << "Please enter Address:" << endl;
+    //cout << "Please enter ID:" << endl;
+    //cout << "Please enter Bank Account Number:" << endl;
+    
+    number_of_records++;
+    
+    return 1;
+
+}
+
+void show_database(StaffRec * &database, int &number_of_records, int capacity){
+    
+    int choice;
+    int records_per_page = 10;
+    int n = 0;
+    
+    char user_input = '\0';
+    
+    while(user_input != 'q' && user_input != 'Q'){
+        
+        user_input = print_table(database, number_of_records, records_per_page, n);
+
+        cout << endl;
+        
+        if (user_input == 'n' || user_input == 'N'){
+            n += records_per_page;
+        }
+        
+        if (user_input == 'p' || user_input == 'P'){
+            n -= records_per_page;
+        }
+        
+        if (user_input == 'e' || user_input == 'E'){
+            cout << "Which item you want to edit: " ;
+            cin >> choice;
+            edit_record(database, n + choice - 1);
+        }
+        
+        if (user_input == 'd' || user_input == 'D'){
+            cout << "Which item you want to delete: " ;
+            cin >> choice;
+            delete_record(database, number_of_records, n + choice - 1, capacity);
+        }
+    }
+    
+    cout << endl;
+}
+
+void show_search_database(StaffRec * &database, int &number_of_records, int capacity, int &number_of_deletion, string * &id_of_deletion){
+    
+    int choice;
+    int records_per_page = 10;
+    int n = 0;
+    
+    id_of_deletion = new string[capacity];
+    
+    char user_input = '\0';
+    
+    while(user_input != 'q' && user_input != 'Q'){
+        
+        user_input = print_table(database, number_of_records, records_per_page, n);
+        
+        cout << endl;
+        
+        if (user_input == 'n' || user_input == 'N'){
+            n += records_per_page;
+        }
+        
+        if (user_input == 'p' || user_input == 'P'){
+            n -= records_per_page;
+        }
+        
+        if (user_input == 'e' || user_input == 'E'){
+            cout << "Which item you want to edit: " ;
+            cin >> choice;
+            edit_record(database, n + choice - 1);
+        }
+        
+        if (user_input == 'd' || user_input == 'D'){
+            cout << "Which item you want to delete: " ;
+            cin >> choice;
+            
+            id_of_deletion[number_of_deletion] = database[choice-1].staff_no;
+            delete_record(database, number_of_records, n + choice - 1, capacity);
+            
+            number_of_deletion++;
+        }
+    }
+    
+    cout << endl;
+}
+
+char print_table(StaffRec database[], int number_of_records, int records_per_page, int n){
+    
+    char user_input = '\0';
+    
+    cout << "Page: " << (n/10 + 1) << '/' ;
+    
+    if (number_of_records%records_per_page != 0)
+        cout << (number_of_records/records_per_page + 1) << endl;
+    else
+        cout << (number_of_records/records_per_page) << endl;
+    
+    cout << setw(2)  << "#";
+    cout << setw(12) << "Employee ID";
+    cout << setw(12) << "First Name";
+    cout << setw(9)  << "Surname";
+    cout << setw(8)  << "Gender";
+    cout << setw(11) << "Job Title";
+    cout << setw(9)  << "Salary";
+    cout << setw(6)  << "Form";
+    cout << setw(9)  << "Status";
+    cout << setw(11) << "Phone No.";
+    cout << setw(15) << "Date of Birth";
+    cout << setw(5)  << "Age" << endl;
+    cout << "-------------------------------------------------------------------------------------------------------------" << endl;
+    
+    for (int i = 0; i < records_per_page; i++){
+        if (n+i < number_of_records){
+            cout << setw(2)  << i + 1;
+            cout << setw(12) << database[n+i].staff_no;
+            cout << setw(12) << database[n+i].first_name;
+            cout << setw(9)  << database[n+i].last_name;
+            cout << setw(8)  << database[n+i].gender;
+            cout << setw(11) << database[n+i].job_title;
+            cout << setw(9)  << database[n+i].salary;
+            cout << setw(6)  << database[n+i].employment_form;
+            cout << setw(9)  << database[n+i].job_status;
+            cout << setw(6)  << database[n+i].phone_no.substr(0, 4);
+            cout << setw(1)  << "-" ;
+            cout << setw(4)  << database[n+i].phone_no.substr(4, 4);
+            cout << setw(15) << database[n+i].birth_day + "-" + database[n+i].birth_month + "-" + database[n+i].birth_year;
+            cout << setw(5)  << getAge(stoi(database[n+i].birth_day), stoi(database[n+i].birth_month), stoi(database[n+i].birth_year)) << endl;
+        }
+    }
+    
+    cout << endl << "Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. Your Choce: ";
+    cin >> user_input;
+    
+    return user_input;
+}
+
 void grow_array(StaffRec * &old_database, int &capacity, int increment){
     
     StaffRec * new_database = new StaffRec[capacity + increment];
@@ -509,3 +570,82 @@ void delete_record(StaffRec * &old_database, int &number_of_records, int del_ind
     cout << "System Message: Item "<< del_index << " is Successfully Deleted!" << endl;
     cout << endl;
 }
+
+void search_record(StaffRec * &old_database, int &number_of_records, int capacity){
+    
+    char choice;
+    string keyword;
+    
+    cout << "Search/Delete Mode" << endl;
+    cout << "1. Employee ID" << endl;
+    cout << "2. Name" << endl;
+    cout << "3. Age" << endl;
+    cout << "4. Role" << endl;
+    
+    cout << endl << "Your Choice: " ;
+    cin >> choice;
+    
+    switch (choice){
+        case '1':
+            cout << endl << "Enter Employee ID: " ;
+            cin >> keyword;
+            search_match_string(old_database, number_of_records, capacity, choice, keyword);
+            break;
+            
+        case '4':
+            cout << endl << "Enter Role: " ;
+            cin >> keyword;
+            search_match_string(old_database, number_of_records, capacity, choice, keyword);
+            break;
+        
+        //case '2':
+        //    cout << "123" << endl;
+        //    break;
+            
+    }
+
+}
+
+void search_match_string (StaffRec * &old_database, int &number_of_records, int capacity, char choice, string keyboard){
+    
+    StaffRec * search_result = new StaffRec[capacity];
+    int * index = new int[capacity];
+    //int * index_of_deletion;
+    string * id_of_deletion;
+    int number_of_result = 0;
+    int number_of_deletion = 0;
+    
+    if (choice == '1'){
+        for(int i = 0; i < number_of_records; i++){
+            if (old_database[i].staff_no == keyboard){
+                search_result[number_of_result] = old_database[i];
+                index[number_of_result] = i;
+                number_of_result++;
+            }
+        }
+    }
+    
+    if (choice == '4'){
+        for(int i = 0; i < number_of_records; i++){
+            if (old_database[i].job_title == keyboard){
+                search_result[number_of_result] = old_database[i];
+                index[number_of_result] = i;
+                number_of_result++;
+            }
+        }
+    }
+    
+    show_search_database(search_result, number_of_result, capacity, number_of_deletion, id_of_deletion);
+    
+    if (number_of_deletion != 0){
+        for (int i = 0; i < number_of_deletion; i++){                           //number of deletion e.g. 3 items to be deleted
+            for (int j = 0; i < number_of_records; j++){                       //loop the whole database
+                if (id_of_deletion[i] == old_database[j].staff_no){
+                    delete_record(old_database, number_of_records, j, capacity);
+                    break;
+                }
+            }
+        }
+    }
+}
+
