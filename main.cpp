@@ -42,7 +42,7 @@ int add_record(StaffRec database[], int &number_of_records);
 
 void show_database(StaffRec * &database, int &number_of_records, int capacity);
 
-void show_search_database(StaffRec * &database, int &number_of_records, int capacity, int &number_of_deletion, string * &id_of_deletion);
+void show_search_database(StaffRec * &database, int &number_of_records, int capacity, int &number_of_deletion, string * &id_of_deletion, int &number_of_edit, string * &id_of_edit);
 
 char print_table(StaffRec database[], int number_of_records, int records_per_page, int n);
 
@@ -126,8 +126,6 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity){
     
     string temp;
     getline(input_file, temp); //skip the first line (field name)
-    //getline(input_file, temp);
-    //cout << temp << endl;
     
     int k = number_of_records;
     
@@ -136,13 +134,8 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity){
         int i = 0;
         int j = 0;
         
-        //cout << endl << temp << endl;
-        
-        if (k >= capacity){
+        if (k >= capacity)
             grow_array(database, capacity, 3);
-            //cout <<endl <<"------------------------------------------------------------------------"<<endl;
-            //show_database(database, number_of_records);
-        }
         
         j = int(temp.find('\t', i));
         database[k].staff_no = temp.substr(i, j - i);
@@ -351,13 +344,14 @@ void show_database(StaffRec * &database, int &number_of_records, int capacity){
     cout << endl;
 }
 
-void show_search_database(StaffRec * &database, int &number_of_records, int capacity, int &number_of_deletion, string * &id_of_deletion){
+void show_search_database(StaffRec * &database, int &number_of_records, int capacity, int &number_of_deletion, string * &id_of_deletion, int &number_of_edit, string * &id_of_edit){
     
     string choice;
     int records_per_page = 10;
     int n = 0;
     
     id_of_deletion = new string[capacity];
+    id_of_edit = new string[capacity];
     
     char user_input = '\0';
     
@@ -378,7 +372,11 @@ void show_search_database(StaffRec * &database, int &number_of_records, int capa
         if (user_input == 'e' || user_input == 'E'){
             cout << "Which item you want to edit: " ;
             cin >> choice;
+            
+            id_of_edit[number_of_edit] = database[stoi(choice) - 1].staff_no;
             edit_record(database, n + stoi(choice) - 1);
+            
+            number_of_edit++;
         }
         
         if (user_input == 'd' || user_input == 'D'){
@@ -619,11 +617,17 @@ void search_record(StaffRec * &old_database, int &number_of_records, int capacit
 void search_match_string (StaffRec * &old_database, int &number_of_records, int capacity, char choice, string keyboard){
     
     StaffRec * search_result = new StaffRec[capacity];
+    //StaffRec * search_result = new StaffRec[capacity];
+
     int * index = new int[capacity];
     //int * index_of_deletion;
     string * id_of_deletion;
-    int number_of_result = 0;
+    string * id_of_edit;
+    
     int number_of_deletion = 0;
+    int number_of_edit = 0;
+    
+    int number_of_result = 0;
     
     if (choice == '1'){
         for(int i = 0; i < number_of_records; i++){
@@ -645,12 +649,28 @@ void search_match_string (StaffRec * &old_database, int &number_of_records, int 
         }
     }
     
-    show_search_database(search_result, number_of_result, capacity, number_of_deletion, id_of_deletion);
+    show_search_database(search_result, number_of_result, capacity, number_of_deletion, id_of_deletion, number_of_edit, id_of_edit);
 
+    if(number_of_edit != 0){
+        for (int i = 0; i < number_of_edit; i++){                               //number of deletion e.g. 3 items to be edited
+            for (int j = 0; j < number_of_records; j++){                        //loop the whole database
+                if (old_database[j].staff_no == id_of_edit[i]){
+                    int k;
+                    for(k = 0; k < number_of_result; k++){
+                        if (old_database[j].staff_no == search_result[k].staff_no)
+                            break;
+                    }
+                    old_database[j] = search_result[k];
+                    break;
+                }
+            }
+        }
+    }
+    
     if (number_of_deletion != 0){
         for (int i = 0; i < number_of_deletion; i++){                           //number of deletion e.g. 3 items to be deleted
-            for (int j = 0; i < number_of_records; j++){                        //loop the whole database
-                if (id_of_deletion[i] == old_database[j].staff_no){
+            for (int j = 0; j < number_of_records; j++){                        //loop the whole database
+                if (old_database[j].staff_no == id_of_deletion[i]){
                     delete_record(old_database, number_of_records, j, capacity);
                     break;
                 }
