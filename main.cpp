@@ -134,7 +134,48 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity){
     }
     
     string temp;
-    getline(input_file, temp); //skip the first line (field name)
+    getline(input_file, temp); //read the first line (field name)
+    
+    int i = 0;
+    int j = 0;
+    int number_of_attributes = 0;
+    
+    // this while loop is used to find the number of attributes (field name) a file has
+    // result is stored in 'int number_of_attributes'
+    while ( temp[i] != '\0'){
+        j = int(temp.find('\t', i));
+        i = ++j;
+        number_of_attributes++;
+    }
+    
+    //initialize the first element in the database array
+    database[0].number_of_user_defined_attributes = number_of_attributes - 10;
+    database[0].user_defined_attributes = new string[database[0].number_of_user_defined_attributes];
+    database[0].user_defined_attributes_value = new string[database[0].number_of_user_defined_attributes];
+    
+    for (int k = 0; k < database[0].number_of_user_defined_attributes; k++){
+        
+        int i = 0;
+        int j = 0;
+        
+        number_of_attributes = 0;
+        string user_defined_attributes_value;
+        
+        while ( temp[i] != '\0'){
+            j = int(temp.find('\t', i));
+            if (number_of_attributes == k + 10){
+                cout << "temp.substr(i, j - i) = " << temp.substr(i, j - i) + " " << endl;
+                user_defined_attributes_value = temp.substr(i, j - i);
+            }
+            i = ++j;
+            number_of_attributes++;
+        }
+        
+        database[0].user_defined_attributes[k] = user_defined_attributes_value;
+    }
+    
+    //cout << "database[0].user_defined_attributes[0] = " << database[0].user_defined_attributes[0] << endl;
+    //cout << "database[0].user_defined_attributes[1] = " << database[0].user_defined_attributes[1] << endl;
     
     int k = number_of_records;
     
@@ -190,12 +231,33 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity){
         //cout << temp.substr(i, j - i) << endl;
         i = ++j;
         
+        if (k == 0){
+            for (int n = 0; n < database[k].number_of_user_defined_attributes; n++){
+                j = int(temp.find('\t', i));
+                database[k].user_defined_attributes_value[n] = temp.substr(i, j - i);
+                i = ++j;
+            }
+        }
+        
+        cout << "database[0].user_defined_attributes[0] = " << database[0].user_defined_attributes[0] << endl;
+        cout << "database[0].user_defined_attributes[1] = " << database[0].user_defined_attributes[1] << endl;
+        
+        if (k != 0){
+            
+            database[k].number_of_user_defined_attributes = database[0].number_of_user_defined_attributes;
+            database[k].user_defined_attributes = database[0].user_defined_attributes;
+            database[k].user_defined_attributes_value = new string[database[0].number_of_user_defined_attributes];
+            
+            for (int n = 0; n < database[k].number_of_user_defined_attributes; n++){
+                j = int(temp.find('\t', i));
+                database[k].user_defined_attributes_value[n] = temp.substr(i, j - i);
+                i = ++j;
+            }
+        }
+        
         k++;
         number_of_records++;
     }
-    
-    //cout <<endl <<"------------------------------------------------------------------------"<<endl;
-    //show_database(database, number_of_records);
     
     cout << "System Message: File test.txt is successfully imported!" << endl;
     cout << endl;
@@ -226,9 +288,13 @@ int file_export(StaffRec database[], int number_of_records){
     output_file << "Form\t";
     output_file << "Status\t";
     output_file << "Phone No.\t";
-    output_file << "Date of Birth" << endl;
+    output_file << "Date of Birth\t";
     
+    for (int j = 0; j < database[0].number_of_user_defined_attributes; j++)
+        output_file << database[0].user_defined_attributes[j] + "\t";
     
+    output_file << "\n";
+
     for (int i = 0; i < number_of_records; i++){
         
         output_file << database[i].staff_no << "\t";
@@ -240,7 +306,12 @@ int file_export(StaffRec database[], int number_of_records){
         output_file << database[i].employment_form << "\t";
         output_file << database[i].job_status << "\t";
         output_file << database[i].phone_no << "\t";
-        output_file << database[i].birth_day + "-" + database[i].birth_month + "-" + database[i].birth_year<< "\t" << endl;
+        output_file << database[i].birth_day + "-" + database[i].birth_month + "-" + database[i].birth_year<< "\t";
+        
+        for (int j = 0; j < database[i].number_of_user_defined_attributes; j++)
+            output_file << database[i].user_defined_attributes_value[j] + "\t";
+        
+        output_file << "\n";
     }
     
     cout << "File Successfully Exported!" << endl;
@@ -373,17 +444,8 @@ int add_record(StaffRec database[], int &number_of_records){
             }
             
             for (int m = old_number_of_user_defined_attributes; m < database[number_of_records].number_of_user_defined_attributes; m++){
-            
-                //database[k].user_defined_attributes_value = new string[number_of_new_attributes];
-
-                //for (int l = 0; l < number_of_new_attributes; l++){
                     database[k].user_defined_attributes_value[m] = "----";
-                //}
-            
             }
-            
-            
-            
         }
     }
     //cout << "Please enter Address:" << endl;
@@ -517,14 +579,21 @@ char print_table(StaffRec database[], int number_of_records, int records_per_pag
     cout << setw(15) << "Date of Birth";
     cout << setw(5)  << "Age";
     
+    int extra_hyphen = 0;
     if (database[0].number_of_user_defined_attributes != 0){
         for (int j = 0; j < database[0].number_of_user_defined_attributes; j++){
-            cout << database[0].user_defined_attributes[j];
+            cout << setw(int(database[0].user_defined_attributes[j].length() + 2)) << database[0].user_defined_attributes[j];
+            extra_hyphen += int(database[0].user_defined_attributes[j].length() + 2);
         }
     }
     
     //cout << << endl;
-    cout << endl << "-------------------------------------------------------------------------------------------------------------" << endl;
+    cout << endl << "-------------------------------------------------------------------------------------------------------------";
+    
+    for (int i = 0; i < extra_hyphen; i++)
+        cout << "-" ;
+    
+    cout << endl;
     
     for (int i = 0; i < records_per_page; i++){
         if (n+i < number_of_records){
@@ -545,7 +614,7 @@ char print_table(StaffRec database[], int number_of_records, int records_per_pag
             
             if (database[n+i].number_of_user_defined_attributes != 0){
                 for (int j = 0; j < database[n+i].number_of_user_defined_attributes; j++){
-                    cout << database[n+i].user_defined_attributes_value[j];
+                    cout << setw(int(database[n+i].user_defined_attributes_value[j].length() + 2))<< database[n+i].user_defined_attributes_value[j];
                 }
             }
             
