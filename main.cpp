@@ -846,3 +846,5 @@ void search_match_string (StaffRec * &old_database, int &number_of_records, int 
     }
 }
 
+void search_in_range (StaffRec * &database, int &number_of_records, int capacity){
+}
