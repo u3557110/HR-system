@@ -32,6 +32,15 @@ struct StaffRec {
     string birth_day;
     string birth_month;
     string birth_year;
+    
+    int number_of_user_defined_attributes = 0;
+    
+    string *user_defined_attributes;
+    string *user_defined_attributes_value;
+    
+    //= new string[number_of_user_defined_attributes];
+    
+    
 };
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -295,7 +304,88 @@ int add_record(StaffRec database[], int &number_of_records){
     database[number_of_records].birth_day = temp.substr(0,2);
     database[number_of_records].birth_month = temp.substr(3,2);
     database[number_of_records].birth_year = temp.substr(6,4);
+    
+    if (number_of_records != 0){
+        if(database[number_of_records - 1].number_of_user_defined_attributes != 0){
+         
+            database[number_of_records].number_of_user_defined_attributes = database[number_of_records - 1].number_of_user_defined_attributes;
+            database[number_of_records].user_defined_attributes = database[number_of_records - 1].user_defined_attributes;
+            database[number_of_records].user_defined_attributes_value = new string[database[number_of_records].number_of_user_defined_attributes];
+            
+            for (int i = 0; i < database[number_of_records].number_of_user_defined_attributes; i++){
+                cout << "Please enter " << database[number_of_records].user_defined_attributes[i] << ": ";
+                getline (cin, database[number_of_records].user_defined_attributes_value[i]);
+            }
+        }
+    }
+    
+    cout << "Add user defined attributes (Y/N)?" << endl;
+    getline(cin, temp);
+    if (temp == "Y" || temp == "y"){
+        cout << "Number of new user defined attributes?" << endl;
+        getline(cin, temp);
+        
+        int number_of_new_attributes = stoi(temp);
+        
+        if(database[number_of_records].number_of_user_defined_attributes == 0){
+            database[number_of_records].user_defined_attributes = new string[number_of_new_attributes];
+            database[number_of_records].user_defined_attributes_value = new string[number_of_new_attributes];
+        }else{
+            string * backup_user_defined_attributes = database[number_of_records].user_defined_attributes;
+            string * backup_user_defined_attributes_value = database[number_of_records].user_defined_attributes_value;
+            
+            database[number_of_records].user_defined_attributes = new string[database[number_of_records].number_of_user_defined_attributes + number_of_new_attributes];
+            database[number_of_records].user_defined_attributes_value = new string[database[number_of_records].number_of_user_defined_attributes + number_of_new_attributes];
+            
+            for (int k = 0; k < database[number_of_records].number_of_user_defined_attributes; k++){
+                
+                database[number_of_records].user_defined_attributes[k] = backup_user_defined_attributes[k];
+                database[number_of_records].user_defined_attributes_value[k] = backup_user_defined_attributes_value[k];
 
+            }
+            
+        }
+        
+        int j = 0;
+        for (int i = database[number_of_records].number_of_user_defined_attributes; i < database[number_of_records].number_of_user_defined_attributes + number_of_new_attributes; i++){
+            
+            cout << "New attribute " << ++j << ": ";
+            getline(cin, database[number_of_records].user_defined_attributes[i]);
+            cout << "Value of "<< database[number_of_records].user_defined_attributes[i] << ": ";
+            getline(cin, database[number_of_records].user_defined_attributes_value[i]);
+
+        }
+        
+        database[number_of_records].number_of_user_defined_attributes += number_of_new_attributes;
+        
+        for (int k = 0; k < number_of_records; k++){
+            
+            int old_number_of_user_defined_attributes = database[k].number_of_user_defined_attributes;
+
+            database[k].number_of_user_defined_attributes = database[number_of_records].number_of_user_defined_attributes;
+            database[k].user_defined_attributes = database[number_of_records].user_defined_attributes;
+            
+            string * backup_user_defined_attributes_value = database[k].user_defined_attributes_value;
+            database[k].user_defined_attributes_value = new string[database[number_of_records].number_of_user_defined_attributes];
+            
+            for (int n = 0; n < old_number_of_user_defined_attributes; n++){
+                database[k].user_defined_attributes_value[n] = backup_user_defined_attributes_value[n]; //copy old value element
+            }
+            
+            for (int m = old_number_of_user_defined_attributes; m < database[number_of_records].number_of_user_defined_attributes; m++){
+            
+                //database[k].user_defined_attributes_value = new string[number_of_new_attributes];
+
+                //for (int l = 0; l < number_of_new_attributes; l++){
+                    database[k].user_defined_attributes_value[m] = "----";
+                //}
+            
+            }
+            
+            
+            
+        }
+    }
     //cout << "Please enter Address:" << endl;
     //cout << "Please enter ID:" << endl;
     //cout << "Please enter Bank Account Number:" << endl;
@@ -303,7 +393,6 @@ int add_record(StaffRec database[], int &number_of_records){
     number_of_records++;
     
     return 1;
-
 }
 
 void show_database(StaffRec * &database, int &number_of_records, int capacity){
@@ -341,7 +430,7 @@ void show_database(StaffRec * &database, int &number_of_records, int capacity){
         }
     }
     
-    cout << endl;
+    //cout << endl;
 }
 
 void show_search_database(StaffRec * &database, int &number_of_records, int capacity, int &number_of_deletion, string * &id_of_deletion, int &number_of_edit, string * &id_of_edit){
@@ -426,8 +515,16 @@ char print_table(StaffRec database[], int number_of_records, int records_per_pag
     cout << setw(9)  << "Status";
     cout << setw(11) << "Phone No.";
     cout << setw(15) << "Date of Birth";
-    cout << setw(5)  << "Age" << endl;
-    cout << "-------------------------------------------------------------------------------------------------------------" << endl;
+    cout << setw(5)  << "Age";
+    
+    if (database[0].number_of_user_defined_attributes != 0){
+        for (int j = 0; j < database[0].number_of_user_defined_attributes; j++){
+            cout << database[0].user_defined_attributes[j];
+        }
+    }
+    
+    //cout << << endl;
+    cout << endl << "-------------------------------------------------------------------------------------------------------------" << endl;
     
     for (int i = 0; i < records_per_page; i++){
         if (n+i < number_of_records){
@@ -444,7 +541,15 @@ char print_table(StaffRec database[], int number_of_records, int records_per_pag
             cout << setw(1)  << "-" ;
             cout << setw(4)  << database[n+i].phone_no.substr(4, 4);
             cout << setw(15) << database[n+i].birth_day + "-" + database[n+i].birth_month + "-" + database[n+i].birth_year;
-            cout << setw(5)  << getAge(stoi(database[n+i].birth_day), stoi(database[n+i].birth_month), stoi(database[n+i].birth_year)) << endl;
+            cout << setw(5)  << getAge(stoi(database[n+i].birth_day), stoi(database[n+i].birth_month), stoi(database[n+i].birth_year));
+            
+            if (database[n+i].number_of_user_defined_attributes != 0){
+                for (int j = 0; j < database[n+i].number_of_user_defined_attributes; j++){
+                    cout << database[n+i].user_defined_attributes_value[j];
+                }
+            }
+            
+            cout << endl;
         }
     }
     
@@ -605,22 +710,15 @@ void search_record(StaffRec * &old_database, int &number_of_records, int capacit
             cin >> keyword;
             search_match_string(old_database, number_of_records, capacity, choice, keyword);
             break;
-        
-        //case '2':
-        //    cout << "123" << endl;
-        //    break;
-            
+    
     }
-
 }
 
 void search_match_string (StaffRec * &old_database, int &number_of_records, int capacity, char choice, string keyboard){
     
     StaffRec * search_result = new StaffRec[capacity];
-    //StaffRec * search_result = new StaffRec[capacity];
 
     int * index = new int[capacity];
-    //int * index_of_deletion;
     string * id_of_deletion;
     string * id_of_edit;
     
