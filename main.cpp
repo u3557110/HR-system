@@ -2,8 +2,8 @@
 //  main.cpp
 //  1340_project
 //
-//  Created by Toto Leung on 17/4/2019.
-//  Copyright © 2019 Toto Leung. All rights reserved.
+//  Created by Toto Leung on 17/4/2019 and Kin on 23/4/2019.
+//  Copyright © 2019 Toto Leung & Kin. All rights reserved.
 //
 
 #include <ctime>
