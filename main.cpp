@@ -11,7 +11,6 @@ struct StaffRec {
     string first_name;      //First Name
     string last_name;       //Last Name
     string gender;          //Gender
-    //string age;           //Age
     string job_title;       //Job Title
     string salary;          //Salary
     string employment_form; //Full time or part time
@@ -30,12 +29,7 @@ struct StaffRec {
     string *user_defined_attributes;
     string *user_defined_attributes_value;
     
-    //= new string[number_of_user_defined_attributes];
-    
-    
 };
-
-//-------------------------------------------------------------------------------------------------------------------
 
 char show_menu();
 
@@ -65,9 +59,6 @@ void search_match_string (StaffRec * &database, int &number_of_records, int capa
 
 void sort_record(StaffRec * &database, int &number_of_records, int capacity);
 
-
-//-------------------------------------------------------------------------------------------------------------------
-
 int main(){
     
     int increment = 3;
@@ -96,7 +87,7 @@ int main(){
                 break;
                 
             case '4':
-                file_export(database, number_of_records);                       //export to file
+                file_export(database, number_of_records);                           //export to file
                 break;
             
             case '5':
@@ -160,7 +151,7 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity){
         while ( temp[i] != '\0'){
             j = int(temp.find('\t', i));
             if (number_of_attributes == k + 10){
-                cout << "temp.substr(i, j - i) = " << temp.substr(i, j - i) + " " << endl;
+                //cout << "temp.substr(i, j - i) = " << temp.substr(i, j - i) + " " << endl;
                 user_defined_attributes_value = temp.substr(i, j - i);
             }
             i = ++j;
@@ -235,8 +226,8 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity){
             }
         }
         
-        cout << "database[0].user_defined_attributes[0] = " << database[0].user_defined_attributes[0] << endl;
-        cout << "database[0].user_defined_attributes[1] = " << database[0].user_defined_attributes[1] << endl;
+        //cout << "database[0].user_defined_attributes[0] = " << database[0].user_defined_attributes[0] << endl;
+        //cout << "database[0].user_defined_attributes[1] = " << database[0].user_defined_attributes[1] << endl;
         
         if (k != 0){
             
@@ -322,17 +313,35 @@ char show_menu(){
     
     char input;
     
-    cout << "Welcome to Staff Management System." << endl;
-    cout << "Please select:" << endl;
-    cout << "1. Import Record" << endl;
-    cout << "2. Show Record" << endl;
-    cout << "3. Add Record" << endl;
-    cout << "4. Export Record" << endl;
-    cout << "5. Search Record" << endl;
-    cout << "6. Sort Record" << endl;
-    cout << "7. Setting" << endl;
-    cout << "0. Exit" << endl;
-    cout << endl << "Your Choice: ";
+    cout << "  _, ___  _, __, __,   _, _  _, _, _  _,  _, __, _, _ __, _, _ ___    _, , _  _, ___ __, _, _" << endl;
+    cout << " (_   |  /_\\ |_  |_    |\\/| /_\\ |\\ | /_\\ / _ |_  |\\/| |_  |\\ |  |    (_  \\ | (_   |  |_  |\\/|" << endl;
+    cout << " , )  |  | | |   |     |  | | | | \\| | | \\ / |   |  | |   | \\|  |    , )  \\| , )  |  |   |  |" << endl;
+    cout << "  ~   ~  ~ ~ ~   ~     ~  ~ ~ ~ ~  ~ ~ ~  ~  ~~~ ~  ~ ~~~ ~  ~  ~     ~    )  ~   ~  ~~~ ~  ~" << endl;
+    cout << "                                                                          ~'                 " << endl;
+    
+    for (int i = 0; i < 98; i++)
+        cout << "=";
+    
+    cout << endl << endl;
+    
+    for (int i = 0; i < 98; i++)
+        cout << "¯";
+        
+    cout << endl;
+    
+    cout << "||\t\t\t1. Import Record                                                                    ||" << endl;
+    cout << "||\t\t\t2. Show Record                                                                      ||" << endl;
+    cout << "||\t\t\t3. Add Record                                                                       ||" << endl;
+    cout << "||\t\t\t4. Export Record                                                                    ||" << endl;
+    cout << "||\t\t\t5. Search Record                                                                    ||" << endl;
+    cout << "||\t\t\t6. Sort Record                                                                      ||" << endl;
+    cout << "||\t\t\t7. Setting                                                                          ||" << endl;
+    cout << "||\t\t\t0. Exit                                                                             ||" << endl;
+    
+    for (int i = 0; i < 98; i++)
+        cout << "_";
+    
+    cout << endl << endl << "\t\t\tEnter Choice: ";
     
     cin >> input;
     
@@ -355,7 +364,6 @@ int add_record(StaffRec database[], int &number_of_records){
     getline(cin, database[number_of_records].last_name);
     cout << "Please enter Gender:" << endl;
     getline(cin, database[number_of_records].gender);
-    //cout << "Please enter Age:" << endl;
     cout << "Please enter Job Title:" << endl;
     getline(cin, database[number_of_records].job_title);
     cout << "Please enter Salary:" << endl;
@@ -622,7 +630,7 @@ char print_table(StaffRec database[], int number_of_records, int records_per_pag
         }
     }
     
-    cout << endl << "Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort(?). Your Choce: ";
+    cout << endl << "Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. Your Choce: ";
     cin >> user_input;
     
     return user_input;
