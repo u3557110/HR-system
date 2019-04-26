@@ -1,8 +1,9 @@
-#include <ctime>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <string>
+
+#include "getAge.hpp"
 
 using namespace std;
 
@@ -51,8 +52,6 @@ int file_import(StaffRec * &database, int &number_of_records, int &capacity);
 int file_export(StaffRec database[], int number_of_records);
 
 void grow_array(StaffRec * &database, int &capacity, int increment);
-
-int getAge(int birth_date, int birth_month, int birth_year);
 
 void edit_record(StaffRec database[], int index);
 
@@ -658,36 +657,6 @@ void grow_array(StaffRec * &old_database, int &capacity, int increment){
     
     cout << "System Message: Capacity of database has been enlarged to " << capacity << "!" << endl;
     
-}
-
-int getAge(int birth_date, int birth_month, int birth_year){
-    
-    time_t current_time = time(0);
-    tm* now = localtime(&current_time);
-    
-    int current_date = now -> tm_mday;
-    int current_month = now -> tm_mon + 1;
-    int current_year = now -> tm_year + 1900;
-    
-    // days of every month
-    int month[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-    
-    if (birth_date > current_date) {
-        current_date = current_date + month[birth_month - 1];
-        current_month = current_month - 1;
-    }
-    
-    if (birth_month > current_month) {
-        current_year = current_year - 1;
-        current_month = current_month + 12;
-    }
-    
-    // calculate date, month, year
-    // int calculated_date = current_date - birth_date;
-    // int calculated_month = current_month - birth_month;
-    int calculated_year = current_year - birth_year;
-    
-    return calculated_year;
 }
 
 void edit_record(StaffRec database[], int index){
