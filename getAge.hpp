@@ -14,3 +14,5 @@
 #endif /* getAge_hpp */
 
 int getAge(int birth_date, int birth_month, int birth_year);
+
+char show_menu();
