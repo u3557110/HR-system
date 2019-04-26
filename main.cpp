@@ -780,7 +780,7 @@ void search_record(StaffRec * &old_database, int &number_of_records, int capacit
             search_match_string(old_database, number_of_records, capacity, choice, keyword);
             break;
 
-        case '3';
+        case '3':
             cout << endl << "Enter Age: " ;
             cin >> keyword;
             search_match_string(old_database, number_of_records, capacity, choice, keyword);
