@@ -31,6 +31,11 @@ struct StaffRec {
     
 };
 
+//global variable
+int increment = 3;
+int records_per_page = 10;
+
+//function prototype
 char show_menu();
 
 int add_record(StaffRec database[], int &number_of_records);
@@ -59,9 +64,10 @@ void search_match_string (StaffRec * &database, int &number_of_records, int capa
 
 void sort_record(StaffRec * &database, int &number_of_records, int capacity);
 
+void setting ();
+
 int main(){
     
-    int increment = 3;
     StaffRec * database = new StaffRec[increment];
     
     int capacity = increment;               //maximum number of records can be stored currently
@@ -96,6 +102,10 @@ int main(){
                 
             case '6':
                 sort_record(database, number_of_records, capacity);
+                break;
+                
+            case '7':
+                setting();
                 break;
             
             default:
@@ -464,7 +474,6 @@ int add_record(StaffRec database[], int &number_of_records){
 void show_database(StaffRec * &database, int &number_of_records, int capacity){
     
     int choice;
-    int records_per_page = 10;
     int n = 0;
     
     char user_input = '\0';
@@ -506,7 +515,6 @@ void show_database(StaffRec * &database, int &number_of_records, int capacity){
 void show_search_database(StaffRec * &database, int &number_of_records, int capacity, int &number_of_deletion, string * &id_of_deletion, int &number_of_edit, string * &id_of_edit){
     
     string choice;
-    int records_per_page = 10;
     int n = 0;
     
     id_of_deletion = new string[capacity];
@@ -1089,4 +1097,33 @@ void sort_record(StaffRec * &old_database, int &number_of_records, int capacity)
     cout <<"Finish Sorting!"<< endl;
     
     cout << endl;
+}
+
+void setting (){
+    
+    cout << "current increment = " << increment << endl;
+    cout << "current records_per_page = " << records_per_page << endl;
+    
+    cout << endl;
+    
+    char user_input = '\0';
+    
+    while(user_input != 'q' && user_input != 'Q'){
+        
+        cout << "I = Edit number of increment. R = Edit records_per_page. Q = Quit. Your choice = " ;
+        
+        cin >> user_input;
+        
+        cout << endl;
+        
+        if (user_input == 'i' || user_input == 'I'){
+            cout << "Please enter new value: ";
+            cin >> increment;
+        }
+        
+        if (user_input == 'r' || user_input == 'R'){
+            cout << "Please enter new value: ";
+            cin >> records_per_page;
+        }
+    }
 }
