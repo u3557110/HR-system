@@ -68,14 +68,14 @@ A video of how to set up a file of a worker and an example of a finalised worker
 ==================================================================================================
 
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-||			1. Import Record                                                                    ||
-||			2. Show Record                                                                      ||
-||			3. Add Record                                                                       ||
-||			4. Export Record                                                                    ||
-||			5. Search Record                                                                    ||
-||			6. Sort Record                                                                      ||
-||			7. Setting                                                                          ||
-||			0. Exit                                                                             ||
+||			1. Import Record                                                        ||
+||			2. Show Record                                                          ||
+||			3. Add Record                                                           ||
+||			4. Export Record                                                        ||
+||			5. Search Record                                                        ||
+||			6. Sort Record                                                          ||
+||			7. Setting                                                              ||
+||			0. Exit                                                                 ||
 __________________________________________________________________________________________________
 
 			Enter Choice: 
