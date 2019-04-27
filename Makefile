@@ -1,19 +1,19 @@
-main.o:main.cpp file.hpp getAge.hpp manipulateRec.hpp showMenu.hpp sortRec.hpp searchFunction.hpp printRec.hpp
+main.o:main.cpp file.hpp getAge.hpp manipulateRec.hpp showMenu.hpp sortRec.hpp searchFunction.hpp printRec.hpp structStaffRec.hpp
   g++ -c main.cpp
   
-file.o:file.cpp file.hpp
+file.o:file.cpp file.hpp structStaffRec.hpp
   g++ -c file.cpp
 
 getAge.o:getAge.cpp getAge.hpp
   g++ -c getAge.cpp
   
-manipulateRec.o:manipulateRec.cpp manipulateRec.hpp
+manipulateRec.o:manipulateRec.cpp manipulateRec.hpp structStaffRec.hpp
   g++ -c manipulateRec.cpp
   
-printRec.o:printRec.cpp printRec.hpp structStaffRec.hpp getAge.hpp manipulateRec.hpp sortRec.hpp
+printRec.o:printRec.cpp printRec.hpp structStaffRec.hpp getAge.hpp manipulateRec.hpp sortRec.hpp structStaffRec.hpp
   g++ -c printRec.cpp
   
-searchFunction.o:searchFunction.cpp searchFunction.hpp manipulateRec.hpp getAge.hpp printRec.hp
+searchFunction.o:searchFunction.cpp searchFunction.hpp manipulateRec.hpp getAge.hpp printRec.hp structStaffRec.hpp
   g++ -c searchFunction.cpp
   
 showMenu.o:showMenu.cpp showMenu.hpp 
