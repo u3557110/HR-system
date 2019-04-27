@@ -113,4 +113,16 @@ Please enter Phone Number: 56307923			//should be in eight digits
 Please enter Date of Birth (dd-mm-yyyy): 10-10-1993	//should follow the format dd-mm-yyyy
 Add user defined attributes (Y/N)? N			//should enter either 'Y' or 'N'
 ```
+### Search Record
+```
+Search/Delete Mode
+
+1. Employee ID
+2. Name
+3. Age
+4. Role
+Q. Quit
+
+Please enter your choice: 
+```
 ## License
