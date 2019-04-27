@@ -2,7 +2,7 @@
 	<img
 		width="650"
 		alt="Staff Management System"
-		src="https://github.com/u3557110/HR-system/blob/master/LOGO.PNG">
+		src="/LOGO.PNG">
 </h1>
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-c-plus-plus.svg)](https://forthebadge.com)
