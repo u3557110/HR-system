@@ -258,7 +258,7 @@ Page: 1/1
  
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
-### Add Record with New User-defined Attributes
+### Add Record with New User-Defined Attributes
 ```
 Please enter Employee ID: 00000005
 Please enter First Name: Siu Hau
@@ -287,6 +287,32 @@ Page: 1/1
  5    00000005     Siu Hau     Chiu       F     Intern    15000    PT   Normal  9234-8758     10-10-1997   21  9123  4567  4321
 
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
+```
+### Edit Records with User-Defined Attributes
+```
+Which item you want to edit: 5
+Current Employee ID = 00000005, New Employee ID (Press Enter if No Change): 
+Current First Name = Siu Hau, New First Name (Press Enter if No Change): 
+Current Surname = Chiu, New Surname (Press Enter if No Change): 
+Current Gender = F, New Gender (Press Enter if No Change): 
+Current Job Title = Intern, New Job Title (Press Enter if No Change): 
+Current Salary = 15000, New Salary (Press Enter if No Change): 
+Current Employment Form = PT, New Employment Form (Press Enter if No Change): 
+Current Status = Normal, New Status (Press Enter if No Change): 
+Current Phone No. = 92348758, New Phone No. (Press Enter if No Change): 
+Current Date of Birth = 10-10-1997, New Date of Birth, dd-mm-yyyy (Press Enter if No Change): 
+Current abcd = 9123, New abcd. (Press Enter if No Change): aaaa
+Current efgh = 4567, New efgh. (Press Enter if No Change): bbbb
+Current ijkl = 4321, New ijkl. (Press Enter if No Change): cccc
+
+Page: 1/1
+ # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age  abcd  efgh  ijkl
+-------------------------------------------------------------------------------------------------------------------------------
+ 1    00000001   Shun Wing     Wong       M     Intern    20000    FT   Normal  2233-3322     12-04-1998   21  ----  ----  ----
+ 2    00000002     King To    Leung       M   Engineer    30000    FT   Normal  6409-9723     03-04-1988   31  ----  ----  ----
+ 3    00000003  Kwong Wing       Au       M     Intern    40000    FT   Normal  2345-6789     10-10-1989   29  1234  ----  ----
+ 4    00000004     Mud Cow      Lai       M   Engineer    50000    FT   Normal  9876-5432     11-11-1999   19  5678  9123  ----
+ 5    00000005     Siu Hau     Chiu       F     Intern    15000    PT   Normal  9234-8758     10-10-1997   21  aaaa  bbbb  cccc
 ```
 ## Team
 
