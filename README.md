@@ -136,7 +136,7 @@ Page: 1/3
  .
  .
  .
- 10    00000010     Sui Kit       Au       M    Manager    50000    FT   Normal  6830-0945     03-04-1968   51
+ 10   00000010     Sui Kit       Au       M    Manager    50000    FT   Normal  6830-0945     03-04-1968   51
 
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
