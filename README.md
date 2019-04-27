@@ -83,6 +83,20 @@ ________________________________________________________________________________
 ```
 
 * Import Record = import records from file
+### Add Record
+```
+Please enter Employee ID: 00000088			//should be in eight digits
+Please enter First Name: Siu Hau				
+Please enter Last Name: Chiu					
+Please enter Gender: M					//should enter either 'M' or 'F'
+Please enter Job Title: Engineer				
+Please enter Salary: 30000					
+Please enter Form of Employment: FT			//should enter either 'FT' or 'PT'
+Please enter Job Status: Normal				//should enter either 'Normal' or 'Fired'
+Please enter Phone Number: 56307923			//should be in eight digits 
+Please enter Date of Birth (dd-mm-yyyy): 10-10-1993	//should follow the format dd-mm-yyyy
+Add user defined attributes (Y/N)? N			//should enter either 'Y' or 'N'
+```
 ### Show Record
 ```
 Page: 1/3
@@ -101,19 +115,19 @@ Page: 1/3
 
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
-### Add Record
+### Edit Record
 ```
-Please enter Employee ID: 00000088			//should be in eight digits
-Please enter First Name: Siu Hau				
-Please enter Last Name: Chiu					
-Please enter Gender: M					//should enter either 'M' or 'F'
-Please enter Job Title: Engineer				
-Please enter Salary: 30000					
-Please enter Form of Employment: FT			//should enter either 'FT' or 'PT'
-Please enter Job Status: Normal				//should enter either 'Normal' or 'Fired'
-Please enter Phone Number: 56307923			//should be in eight digits 
-Please enter Date of Birth (dd-mm-yyyy): 10-10-1993	//should follow the format dd-mm-yyyy
-Add user defined attributes (Y/N)? N			//should enter either 'Y' or 'N'
+Which item you want to edit: 1
+Current Employee ID = 00000001, New Employee ID (Press Enter if No Change): 
+Current First Name = Shun Wing, New First Name (Press Enter if No Change): 
+Current Surname = Wong, New Surname (Press Enter if No Change): 
+Current Gender = M, New Gender (Press Enter if No Change): 
+Current Job Title = CEO, New Job Title (Press Enter if No Change): 
+Current Salary = 100000, New Salary (Press Enter if No Change): 200000
+Current Employment Form = FT, New Employment Form (Press Enter if No Change): PT
+Current Status = Normal, New Status (Press Enter if No Change): 
+Current Phone No. = 22333322, New Phone No. (Press Enter if No Change): 92347589
+Current Date of Birth = 12-04-1978, New Date of Birth, dd-mm-yyyy (Press Enter if No Change): 
 ```
 ### Search Record
 ```
