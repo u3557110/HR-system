@@ -1,5 +1,8 @@
 main.o:main.cpp file.hpp getAge.hpp manipulateRec.hpp showMenu.hpp sortRec.hpp searchFunction.hpp printRec.hpp
   g++ -c main.cpp
+  
+file.o:file.cpp file.hpp
+  g++ -c file.cpp
 
 getAge.o:getAge.cpp getAge.hpp
   g++ -c getAge.cpp
