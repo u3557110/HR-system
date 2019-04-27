@@ -59,6 +59,7 @@ A video of how to set up a file of a worker and an example of a finalised worker
 [Chu Kin Ning](https://github.com/u3557110) | [Leung King To](https://github.com/totoleung) 
 
 ## Instruction
+### Main Menu
 ```
   _, ___  _, __, __,   _, _  _, _, _  _,  _, __, _, _ __, _, _ ___    _, , _  _, ___ __, _, _
  (_   |  /_\ |_  |_    |\/| /_\ |\ | /_\ / _ |_  |\/| |_  |\ |  |    (_  \ | (_   |  |_  |\/|
@@ -68,7 +69,7 @@ A video of how to set up a file of a worker and an example of a finalised worker
 ==================================================================================================
 
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
-||			1. Import Record                                                         ||
+||			1. Import Record                                                        ||
 ||			2. Show Record                                                          ||
 ||			3. Add Record                                                           ||
 ||			4. Export Record                                                        ||
