@@ -180,6 +180,8 @@ Page: 1/3
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Search Record
+- This is the Search Record page. 
+- In this example, employee with surname 'Chau' will be searched.
 ```
 Search/Delete Mode
 
@@ -205,6 +207,9 @@ Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your
 ```
 
 ### Delete Records Being Searched
+- User can delete the record of a specifc employee.
+- Or he can delete all of the search records. In this case, all records with surname 'Chau' will be deleted.
+- Back to the Show Record page, all records with surname 'Chau' are deleted.
 ```
 Which item you want to delete (input 'a' for all): a
 System Message: Item with ID = 00000004 is deleted!
