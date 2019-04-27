@@ -54,6 +54,7 @@ A video of how to set up a file of a worker and an example of a finalised worker
 
 ## Instruction
 ### Main Menu
+- This is the main menu of the Staff Management System.
 ```
   _, ___  _, __, __,   _, _  _, _, _  _,  _, __, _, _ __, _, _ ___    _, , _  _, ___ __, _, _
  (_   |  /_\ |_  |_    |\/| /_\ |\ | /_\ / _ |_  |\/| |_  |\ |  |    (_  \ | (_   |  |_  |\/|
@@ -75,9 +76,9 @@ ________________________________________________________________________________
 
 			Enter Choice: 
 ```
-
-* Import Record = import records from file
 ### Add Record
+- This example shows how to add a new record.
+- These are also the compulsory input items to create a new record.
 ```
 Please enter Employee ID: 00000088			//should be in eight digits
 Please enter First Name: Siu Hau				
@@ -92,6 +93,9 @@ Please enter Date of Birth (dd-mm-yyyy): 10-10-1993	//should follow the format d
 Add user defined attributes (Y/N)? N			//should enter either 'Y' or 'N'
 ```
 ### Show Record
+- This is the page to show all the records in the database.
+- The page number is indicated in the top left hand corner.
+- User can switch page back and forth by using the 'n' command or 'p' command respectively.
 ```
 Page: 1/3
  # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age
