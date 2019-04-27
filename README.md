@@ -231,7 +231,8 @@ Page: 1/3
 10    00000013        Zany       Ho       M Supervisor    40000    FT   Normal  9405-6602     03-04-1958   61
 ```
 ### Sort Record
-- Records can be sorted depends on which attribute the user selects. 
+- Records can be sorted depends on which attribute the user selects.
+- In this example, records are sorted in Surname.
 ```
 Select attributes to sort:
 
@@ -267,6 +268,9 @@ Page: 1/3
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Import Records from File
+- User can import records from file.
+- In this example, test.txt is being imported.
+- Size of database storing the records is increased dynamically.
 ```
 Please enter name of file to import: test.txt
 System Message: Capacity of database has been enlarged to 6!
@@ -280,6 +284,8 @@ System Message: Capacity of database has been enlarged to 27!
 System Message: File test.txt is successfully imported!
 ```
 ### Export Records to File
+- User can export records to file.
+- In this example, test.txt is being exported.
 ```
 Please enter name of file to export: test.txt
 File is Successfully Exported!
