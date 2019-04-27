@@ -1,9 +1,9 @@
 //
 //  structStaffRec.hpp
-//  1340_project
+//  ENGG1340_course_project
 //
-//  Created by Toto Leung on 27/4/2019.
-//  Copyright © 2019 Toto Leung. All rights reserved.
+//  Created by Leung King To on 27/4/2019.
+//  Copyright © 2019 Leung King To. All rights reserved.
 //
 
 #ifndef structStaffRec_hpp
@@ -17,18 +17,18 @@
 using namespace std;
 
 struct StaffRec {
-    string staff_no;        //staff_number
-    string first_name;      //First Name
-    string last_name;       //Last Name
-    string gender;          //Gender
-    string job_title;       //Job Title
-    string salary;          //Salary
-    string employment_form; //Full time or part time
-    string job_status;      //on leave or suspension from work
-    string phone_no;        //Phone Number
-    //string address;       //Address
-    //string id_no;         //Id Card Number
-    //string bank_no;       //Bank Account Number
+    string staff_no;                        //staff_number
+    string first_name;                      //First Name
+    string last_name;                       //Last Name
+    string gender;                          //Gender
+    string job_title;                       //Job Title
+    string salary;                          //Salary
+    string employment_form;                 //Full time or part time
+    string job_status;                      //on leave or suspension from work
+    string phone_no;                        //Phone Number
+    //string address;                       //Address
+    //string id_no;                         //Id Card Number
+    //string bank_no;                       //Bank Account Number
     
     string birth_day;
     string birth_month;

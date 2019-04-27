@@ -12,9 +12,17 @@
 #include "printRec.hpp"
 #include "structStaffRec.hpp"
 #include "getAge.hpp"
+#include "manipulateRec.hpp"
+#include "sortRec.hpp"
 
 using namespace std;
 
+// Function: print the content of the database
+// Input: StaffRec database[]: the address pointing to the database
+//        int number_of_records: number of records the database has
+//        int records_per_page: number of records can be displayed each time
+//        int n: page number
+// Output: NULL
 char print_table(StaffRec database[], int number_of_records, int records_per_page, int n){
     
     char user_input = '\0';
@@ -48,7 +56,6 @@ char print_table(StaffRec database[], int number_of_records, int records_per_pag
         }
     }
     
-    //cout << << endl;
     cout << endl << "-------------------------------------------------------------------------------------------------------------";
     
     for (int i = 0; i < extra_hyphen; i++)
@@ -83,8 +90,59 @@ char print_table(StaffRec database[], int number_of_records, int records_per_pag
         }
     }
     
-    cout << endl << "Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. Your Choce: ";
+    cout << endl << "Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: ";
     cin >> user_input;
     
     return user_input;
+}
+
+// Function: sort the records in the database
+// Input: StaffRec * &database: the address pointing to the database
+//        int &number_of_records: number of records the database has
+//        int capacity: size of the current database
+//        int records_per_page: number of records can be displayed each time
+// Output: NULL
+void show_database(StaffRec * &database, int &number_of_records, int capacity, int records_per_page){
+    
+    int choice;
+    int n = 0;
+    
+    char user_input = '\0';
+    
+    while(user_input != 'q' && user_input != 'Q'){
+        
+        user_input = print_table(database, number_of_records, records_per_page, n);
+        
+        cout << endl;
+        
+        if (user_input == 'n' || user_input == 'N'){
+            n += records_per_page;
+        }
+        
+        if (user_input == 'p' || user_input == 'P'){
+            n -= records_per_page;
+        }
+        
+        if (user_input == 'e' || user_input == 'E'){
+            cout << "Which item you want to edit: " ;
+            cin >> choice;
+            edit_record(database, n + choice - 1);
+        }
+        
+        if (user_input == 'd' || user_input == 'D'){
+            cout << "Which item you want to delete: " ;
+            cin >> choice;
+            delete_record(database, number_of_records, n + choice - 1, capacity);
+        }
+        
+        if (user_input == 's' || user_input == 'S'){
+            sort_record(database, number_of_records, capacity);
+        }
+        
+        if (user_input == 'f' || user_input == 'F'){
+            cout << "Whom you want to fire: " ;
+            cin >> choice;
+            database[n + choice - 1].job_status = "Fired";
+        }
+    }
 }

@@ -14,6 +14,11 @@
 
 using namespace std;
 
+// Function: sort the records in the database
+// Input: StaffRec * &database: the address pointing to the database
+//        int &number_of_records: number of records the database has
+//        int capacity: size of the current database
+// Output: NULL
 void sort_record(StaffRec * &old_database, int &number_of_records, int capacity){
     
     int choice;
@@ -22,7 +27,8 @@ void sort_record(StaffRec * &old_database, int &number_of_records, int capacity)
     int index;
     string min;
     
-    cout << "Select field to sort:" << endl;
+    cout << "Select attributes to sort:" << endl;
+    cout << endl;
     cout << "1. Employee ID" << endl;
     cout << "2. First Name" << endl;
     cout << "3. Surname" << endl;
@@ -41,7 +47,7 @@ void sort_record(StaffRec * &old_database, int &number_of_records, int capacity)
     cout << endl << "Please enter your choice: " ;
     cin >> choice;
     
-    for (i = 0; i < number_of_records - 1; i++){
+    for (i = 0; i < number_of_records - 1; i++){                    // sort records by using selection sort
         index = i;
         
         switch (choice){

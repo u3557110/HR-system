@@ -1,15 +1,19 @@
 //
 //  showMenu.hpp
-//  1340_project
+//  ENGG1340_course_project
 //
-//  Created by Toto Leung on 27/4/2019.
-//  Copyright © 2019 Toto Leung. All rights reserved.
+//  Created by Leung King To on 27/4/2019.
+//  Copyright © 2019 Leung King To. All rights reserved.
 //
 
 #ifndef showMenu_hpp
 #define showMenu_hpp
 
 #include <stdio.h>
+
+// Function: show the menu page
+// Input: NULL
+// Output: char: user input
 
 char show_menu();
 

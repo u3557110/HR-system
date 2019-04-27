@@ -13,6 +13,11 @@
 
 #include "structStaffRec.hpp"
 
+// Function: sort the records in the database
+// Input: StaffRec * &database: the address pointing to the database
+//        int &number_of_records: number of records the database has
+//        int capacity: size of the current database
+// Output: NULL
 void sort_record(StaffRec * &database, int &number_of_records, int capacity);
 
 #endif /* sortRec_hpp */
