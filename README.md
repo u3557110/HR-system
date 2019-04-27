@@ -271,6 +271,7 @@ Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your
 - User can import records from file.
 - In this example, test.txt is being imported.
 - Size of database storing the records is increased dynamically.
+- We have provided some test files in the folder /test_files.
 ```
 Please enter name of file to import: test.txt
 System Message: Capacity of database has been enlarged to 6!
