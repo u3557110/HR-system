@@ -156,6 +156,20 @@ Page: 1/3
 
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
+### Fire an Employee
+```
+Whom you want to fire: 1
+Page: 1/3
+ # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age
+-------------------------------------------------------------------------------------------------------------
+ 1    00000002     King To    Leung       M        CTO    90000    FT    Fired  6290-2718     03-04-1988   31
+ 2    00000003   Hing Wong     Chan       M        CFO    90000    FT   Normal  6663-6635     03-04-1982   37
+ .
+ .
+ 10    00000011    Hoi Wing      Liu       F    Manager    50000    FT   Normal  9371-0992     03-04-1948   71
+
+Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
+```
 ### Search Record
 ```
 Search/Delete Mode
