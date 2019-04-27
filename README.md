@@ -166,7 +166,7 @@ Page: 1/3
  2    00000003   Hing Wong     Chan       M        CFO    90000    FT   Normal  6663-6635     03-04-1982   37
  .
  .
- 10    00000011    Hoi Wing      Liu       F    Manager    50000    FT   Normal  9371-0992     03-04-1948   71
+ 10   00000011    Hoi Wing      Liu       F    Manager    50000    FT   Normal  9371-0992     03-04-1948   71
 
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
