@@ -99,7 +99,7 @@ Add user defined attributes (Y/N)? N			//should enter either 'Y' or 'N'
 - User can switch page back and forth by using the 'n' command or 'p' command respectively.
 - User can choose specific record to edit or delete.
 - User can sort the records by using 's' command.
-- User can fire an employee by using 'f'command. One more example will be shown below.
+- User can fire an employee by using 'f' command. One more example will be shown below.
 ```
 Page: 1/3
  # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age
@@ -118,6 +118,9 @@ Page: 1/3
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Edit Record
+- Edit mode will be entered if the user choose to edit an item in the 'Show Record' page. 
+- In this example, Employee ID, Salary, Employment Form and Phone Number will be modified.
+- Leave the new value blank if you do not want to change it.
 ```
 Which item you want to edit: 1
 Current Employee ID = 00000001, New Employee ID (Press Enter if No Change): 00000888
