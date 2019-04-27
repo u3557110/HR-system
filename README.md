@@ -128,6 +128,17 @@ Current Employment Form = FT, New Employment Form (Press Enter if No Change): PT
 Current Status = Normal, New Status (Press Enter if No Change): 
 Current Phone No. = 22333322, New Phone No. (Press Enter if No Change): 92347589
 Current Date of Birth = 12-04-1978, New Date of Birth, dd-mm-yyyy (Press Enter if No Change): 
+
+Page: 1/3
+ # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age
+-------------------------------------------------------------------------------------------------------------
+ 1    00000001   Shun Wing     Wong       M        CEO   200000    PT   Normal  9234-7589     12-04-1978   41
+ .
+ .
+ .
+ 10    00000010     Sui Kit       Au       M    Manager    50000    FT   Normal  6830-0945     03-04-1968   51
+
+Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Search Record
 ```
