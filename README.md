@@ -101,7 +101,7 @@ Page: 1/3
 ```
 ### Add Record
 ```
-Please enter Staff Number: 00000088			//should be in eight digits
+Please enter Employee ID: 00000088			//should be in eight digits
 Please enter First Name: Siu Hau				
 Please enter Last Name: Chiu					
 Please enter Gender: M					//should enter either 'M' or 'F'
