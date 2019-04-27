@@ -125,4 +125,21 @@ Q. Quit					//quit
 
 Please enter your choice: 
 ```
+### Sort Record
+```
+Select attributes to sort:
+1. Employee ID
+2. First Name
+3. Surname
+4. Gender
+5. Job Title
+6. Salary
+7. Form
+8. Status
+9. Phone No.
+10. Date of Birth
+11. Age
+
+Please enter your choice: 
+```
 ## License
