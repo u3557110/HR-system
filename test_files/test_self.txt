@@ -1,0 +1,6 @@
+Staff No.	First Name	Surname	Gender	Job Title	Salary	Form	Status	Phone No.	Date of Birth	abcd	efgh	ijkl	
+00000001	Shun Wing	Wong	M	Intern	20000	FT	Normal	22333322	12-04-1998	----	----	----	
+00000002	King To	Leung	M	Engineer	30000	FT	Normal	64099723	03-04-1988	----	----	----	
+00000003	Kwong Wing	Au	M	Intern	40000	FT	Normal	23456789	10-10-1989	1234	----	----	
+00000004	Mud Cow	Lai	M	Engineer	50000	FT	Normal	98765432	11-11-1999	5678	9123	----	
+00000005	Siu Hau	Chiu	F	Intern	15000	PT	Normal	92348758	10-10-1997	9123	4567	4321	
