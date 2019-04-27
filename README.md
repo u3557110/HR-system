@@ -117,11 +117,11 @@ Add user defined attributes (Y/N)? N			//should enter either 'Y' or 'N'
 ```
 Search/Delete Mode
 
-1. Employee ID
-2. Name
-3. Age
-4. Role
-Q. Quit
+1. Employee ID				//enter specific employee ID to search
+2. Name					//enter last name or first name or both to search
+3. Age					//enter the range to age to search
+4. Role					//enter specific job title to search
+Q. Quit					//quit
 
 Please enter your choice: 
 ```
