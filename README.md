@@ -119,7 +119,7 @@ Search/Delete Mode
 
 1. Employee ID				//enter specific employee ID to search
 2. Name					//enter last name or first name or both to search
-3. Age					//enter the range to age to search
+3. Age					//enter the range of age to search
 4. Role					//enter specific job title to search
 Q. Quit					//quit
 
