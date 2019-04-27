@@ -79,6 +79,7 @@ ________________________________________________________________________________
 ### Add Record
 - This example shows how to add a new record.
 - These are also the compulsory input items to create a new record.
+- Here, FT means full-time job, PT means part-time job.
 ```
 Please enter Employee ID: 00000088			//should be in eight digits
 Please enter First Name: Siu Hau				
@@ -96,6 +97,9 @@ Add user defined attributes (Y/N)? N			//should enter either 'Y' or 'N'
 - This is the page to show all the records in the database.
 - The page number is indicated in the top left hand corner.
 - User can switch page back and forth by using the 'n' command or 'p' command respectively.
+- User can choose specific record to edit or delete.
+- User can sort the records by using 's' command.
+- User can fire an employee by using 'f'command. One more example will be shown below.
 ```
 Page: 1/3
  # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age
