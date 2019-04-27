@@ -83,5 +83,20 @@ ________________________________________________________________________________
 ```
 
 * Import Record = import records from file
-
+### Show Record
+```
+Page: 1/3
+ # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age
+-------------------------------------------------------------------------------------------------------------
+ 1    00000001   Shun Wing     Wong       M        CEO   100000    FT   Normal  2233-3322     12-04-1978   41
+ 2    00000002     King To    Leung       M        CTO    90000    FT   Normal  6409-9723     03-04-1988   31
+ 3    00000003   Hing Wong     Chan       M        CFO    90000    FT   Normal  6409-9723     03-04-1982   37
+ 4    00000004     Sze Tat     Chau       M   Director    80000    FT   Normal  6409-9723     03-04-1988   31
+ 5    00000005    Bean Y C       Ho       M   Director    80000    FT   Normal  6409-9723     03-04-1984   35
+ 6    00000006       Doris       Lo       F        SVP    70000    FT   Normal  6409-9723     03-04-1988   31
+ 7    00000007        Hyde     Hang       M        SVP    70000    FT   Normal  6409-9723     03-04-1985   34
+ 8    00000008     Tai Man     Chau       M         VP    60000    FT   Normal  6409-9723     03-04-1988   31
+ 9    00000009    Siu Ming     Chan       M    Manager    50000    FT   Normal  6409-9723     03-04-1978   41
+10    00000010     Sui Kit       Au       M    Manager    50000    FT   Normal  6409-9723     03-04-1968   51
+```
 ## License
