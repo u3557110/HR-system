@@ -164,7 +164,7 @@ Page: 1/3
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Fire an Employee
-- Delete mode will be entered if the user choose to fire an employee in the 'Show Record' page. 
+- Fire mode will be entered if the user choose to fire an employee in the 'Show Record' page. 
 - In this example, the status of employee with Employee ID 00000002 will be changed from 'Normal' to 'Fired.
 ```
 Whom you want to fire: 1
@@ -209,7 +209,7 @@ Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your
 ### Delete Records Being Searched
 - User can delete the record of a specifc employee.
 - Or he can delete all of the search records. In this case, all records with surname 'Chau' will be deleted.
-- Back to the Show Record page, all records with surname 'Chau' are deleted.
+- Back to the Show Record page, you can see all records with surname 'Chau' are deleted.
 ```
 Which item you want to delete (input 'a' for all): a
 System Message: Item with ID = 00000004 is deleted!
@@ -231,6 +231,7 @@ Page: 1/3
 10    00000013        Zany       Ho       M Supervisor    40000    FT   Normal  9405-6602     03-04-1958   61
 ```
 ### Sort Record
+- Records can be sorted depends on which attribute the user selects. 
 ```
 Select attributes to sort:
 
