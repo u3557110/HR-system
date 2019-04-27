@@ -98,6 +98,8 @@ Page: 1/3
  8    00000008     Tai Man     Chau       M         VP    60000    FT   Normal  6401-4257     03-04-1988   31
  9    00000009    Siu Ming     Chan       M    Manager    50000    FT   Normal  6663-6568     03-04-1978   41
 10    00000010     Sui Kit       Au       M    Manager    50000    FT   Normal  6830-0945     03-04-1968   51
+
+Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Add Record
 ```
