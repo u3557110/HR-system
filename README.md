@@ -52,12 +52,6 @@ A video of how to set up a file of a worker and an example of a finalised worker
 - Show probation period.
 - Show expiry date of related docunments, such as work permits, Visa and contracts. 
 
-## Team
-
-[![Chu Kin Ning](https://avatars1.githubusercontent.com/u/47244396?s=460&v=4)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=460&v=4)](https://github.com/totoleung) 
----|---
-[Chu Kin Ning](https://github.com/u3557110) | [Leung King To](https://github.com/totoleung) 
-
 ## Instruction
 ### Main Menu
 ```
@@ -250,6 +244,12 @@ System Message: File test.txt is successfully imported!
 ### Export Records to File
 ```
 Please enter name of file to export: test.txt
-File Successfully Exported!
+File is Successfully Exported!
 ```
+## Team
+
+[![Chu Kin Ning](https://avatars1.githubusercontent.com/u/47244396?s=460&v=4)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=460&v=4)](https://github.com/totoleung) 
+---|---
+[Chu Kin Ning](https://github.com/u3557110) | [Leung King To](https://github.com/totoleung) 
+
 ## License
