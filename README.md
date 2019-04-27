@@ -194,6 +194,28 @@ Page: 1/1
 
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
+
+### Delete Records Being Searched
+```
+Which item you want to delete (input 'a' for all): a
+System Message: Item with ID = 00000004 is deleted!
+System Message: Item with ID = 00000008 is deleted!
+.
+.
+Page: 1/3
+ # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age
+-------------------------------------------------------------------------------------------------------------
+ 1    00000002     King To    Leung       M        CTO    90000    FT    Fired  6290-2718     03-04-1988   31
+ 2    00000003   Hing Wong     Chan       M        CFO    90000    FT   Normal  6663-6635     03-04-1982   37
+ 3    00000005    Bean Y C       Ho       M   Director    80000    FT   Normal  6354-7192     03-04-1984   35
+ 4    00000006       Doris       Lo       F        SVP    70000    FT   Normal  6988-5676     03-04-1988   31
+ 5    00000007        Hyde     Hang       M        SVP    70000    FT   Normal  6514-8946     03-04-1985   34
+ 6    00000009    Siu Ming     Chan       M    Manager    50000    FT   Normal  6663-6568     03-04-1978   41
+ 7    00000010     Sui Kit       Au       M    Manager    50000    FT   Normal  6830-0945     03-04-1968   51
+ 8    00000011    Hoi Wing      Liu       F    Manager    50000    FT   Normal  9371-0992     03-04-1948   71
+ 9    00000012   Johnathan     Kwan       M Supervisor    40000    FT   Normal  9021-8501     03-04-1978   41
+10    00000013        Zany       Ho       M Supervisor    40000    FT   Normal  9405-6602     03-04-1958   61
+```
 ### Sort Record
 ```
 Select attributes to sort:
