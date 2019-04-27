@@ -208,7 +208,7 @@ Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your
 
 ### Delete Records Being Searched
 - User can delete the record of a specifc employee.
-- Or he can delete all of the search records. In this case, all records with surname 'Chau' will be deleted.
+- Or he can delete all the records being searched. In this case, all records with surname 'Chau' will be deleted.
 - Back to the Show Record page, you can see all records with surname 'Chau' are deleted.
 ```
 Which item you want to delete (input 'a' for all): a
@@ -291,6 +291,9 @@ Please enter name of file to export: test.txt
 File is Successfully Exported!
 ```
 ### Import Records from File with User-defined Attributes
+- User can import records with User-defined Attributes from file.
+- In this example, attribute 'abcd' and 'efgh' are User-defined Attributes.
+- Corresponding values '1234, '5678, and '9123' are being imported also.
 ```
 Page: 1/1
  # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age  abcd  efgh
@@ -303,6 +306,9 @@ Page: 1/1
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Add Record with New User-Defined Attributes
+- User can add record with new User-defined Attribute
+- In this example, one new user defined attribute 'ijkl' with value '4321' is added.
+- Attribute 'ijkl' will be added to existing records. Corresponding value will become null or empty.
 ```
 Please enter Employee ID: 00000005
 Please enter First Name: Siu Hau
@@ -333,6 +339,8 @@ Page: 1/1
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Edit Records with User-Defined Attributes
+- User can edit record with new User-defined Attribute
+- In this example, for record with Employee ID 00000005, its value of 'abcd' will be changed from '9123' to 'aaaa'.
 ```
 Which item you want to edit: 5
 Current Employee ID = 00000005, New Employee ID (Press Enter if No Change): 
@@ -345,9 +353,9 @@ Current Employment Form = PT, New Employment Form (Press Enter if No Change):
 Current Status = Normal, New Status (Press Enter if No Change): 
 Current Phone No. = 92348758, New Phone No. (Press Enter if No Change): 
 Current Date of Birth = 10-10-1997, New Date of Birth, dd-mm-yyyy (Press Enter if No Change): 
-Current abcd = 9123, New abcd. (Press Enter if No Change): aaaa
-Current efgh = 4567, New efgh. (Press Enter if No Change): bbbb
-Current ijkl = 4321, New ijkl. (Press Enter if No Change): cccc
+Current abcd = 9123, New abcd (Press Enter if No Change): aaaa
+Current efgh = 4567, New efgh (Press Enter if No Change): bbbb
+Current ijkl = 4321, New ijkl (Press Enter if No Change): cccc
 
 Page: 1/1
  # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age  abcd  efgh  ijkl
