@@ -1,19 +1,32 @@
-census.o:census.cpp BigInteger.h Country.h
-  g++ -c census.cpp
+main.o:main.cpp file.hpp getAge.hpp manipulateRec.hpp showMenu.hpp sortRec.hpp searchFunction.hpp printRec.hpp
+  g++ -c main.cpp
 
-BigInteger.o:BigInteger.h BigInteger.cpp
-  g++ -c BigInteger.cpp
+getAge.o:getAge.cpp getAge.hpp
+  g++ -c getAge.cpp
   
-Country.o:BigInteger.h Country.h Country.cpp
-  g++ -c Country.cpp
+manipulateRec.o:manipulateRec.cpp manipulateRec.hpp
+  g++ -c manipulateRec.cpp
+  
+printRec.o:printRec.cpp printRec.hpp structStaffRec.hpp getAge.hpp manipulateRec.hpp sortRec.hpp
+  g++ -c printRec.cpp
+  
+searchFunction.o:searchFunction.cpp searchFunction.hpp manipulateRec.hpp getAge.hpp printRec.hp
+  g++ -c searchFunction.cpp
+  
+showMenu.o:showMenu.cpp showMenu.hpp 
+  g++ -c showMenu.cpp
 
-census:census.o BigInteger.o Country.o
-  g++ census.o BigInteger.o Country.o -o census
+sortRec.o:sortRec.cpp sortRec.hpp structStaffRec.hpp getAge.hpp
+  g++ -c sortRec.cpp
+  
+structStaffRec.o:structStaffRec.cpp structStaffRec.hpp
+  g++ -c structStaffRec.cpp
+  
+main:main.o getAge.o manipulateRec.o printRec.o searchFunction.o showMenu.o sortRec.o structStaffRec.o
+  g++ main.o getAge.o manipulateRec.o printRec.o searchFunction.o showMenu.o sortRec.o structStaffRec.o -o main
 
 run:
-  ./census > output.txt
-  echo "The following is the output of census."
-  cat output.txt
+  ./main
 
  #This file must be named Makefile
  #Comments start with #
