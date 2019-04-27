@@ -128,6 +128,7 @@ Please enter your choice:
 ### Sort Record
 ```
 Select attributes to sort:
+
 1. Employee ID
 2. First Name
 3. Surname
