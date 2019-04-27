@@ -101,16 +101,16 @@ Page: 1/3
 ```
 ### Add Record
 ```
-Please enter Staff Number: 00000088				//should be in eight digits
+Please enter Staff Number: 00000088			//should be in eight digits
 Please enter First Name: Siu Hau				
 Please enter Last Name: Chiu					
-Please enter Gender: M						//should enter either 'M' or 'F'
+Please enter Gender: M					//should enter either 'M' or 'F'
 Please enter Job Title: Engineer				
 Please enter Salary: 30000					
-Please enter Form of Employment: FT				//should enter either 'FT' or 'PT'
-Please enter Job Status: Normal					//should enter either 'Normal' or 'Fired'
-Please enter Phone Number: 56307923				//should be in eight digits 
-Please enter Date of Birth (dd-mm-yyyy): 10-10-1993		//should follow the format dd-mm-yyyy
-Add user defined attributes (Y/N)? N				//should enter either 'Y' or 'N'
+Please enter Form of Employment: FT			//should enter either 'FT' or 'PT'
+Please enter Job Status: Normal				//should enter either 'Normal' or 'Fired'
+Please enter Phone Number: 56307923			//should be in eight digits 
+Please enter Date of Birth (dd-mm-yyyy): 10-10-1993	//should follow the format dd-mm-yyyy
+Add user defined attributes (Y/N)? N			//should enter either 'Y' or 'N'
 ```
 ## License
