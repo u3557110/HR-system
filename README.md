@@ -81,4 +81,7 @@ ________________________________________________________________________________
 
 			Enter Choice: 
 ```
+
+* Import Record = import records from file
+
 ## License
