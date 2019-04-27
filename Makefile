@@ -10,7 +10,7 @@ getAge.o:getAge.cpp getAge.hpp
 manipulateRec.o:manipulateRec.cpp manipulateRec.hpp structStaffRec.hpp
   g++ -c manipulateRec.cpp
   
-printRec.o:printRec.cpp printRec.hpp structStaffRec.hpp getAge.hpp manipulateRec.hpp sortRec.hpp structStaffRec.hpp
+printRec.o:printRec.cpp printRec.hpp structStaffRec.hpp getAge.hpp manipulateRec.hpp sortRec.hpp
   g++ -c printRec.cpp
   
 searchFunction.o:searchFunction.cpp searchFunction.hpp manipulateRec.hpp getAge.hpp printRec.hp structStaffRec.hpp
