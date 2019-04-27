@@ -180,7 +180,19 @@ Search/Delete Mode
 4. Role					//enter specific job title to search
 Q. Quit					//quit
 
-Please enter your choice: 
+Please enter your choice: 2
+
+Enter Employee First Name (Press Enter if not specified): 
+
+Enter Employee Last Name (Press Enter if not specified): Chau
+
+Page: 1/1
+ # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age
+-------------------------------------------------------------------------------------------------------------
+ 1    00000004     Sze Tat     Chau       M   Director    80000    FT   Normal  6031-0528     03-04-1988   31
+ 2    00000008     Tai Man     Chau       M         VP    60000    FT   Normal  6401-4257     03-04-1988   31
+
+Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Sort Record
 ```
