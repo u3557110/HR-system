@@ -146,6 +146,8 @@ Page: 1/3
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Delete Record
+- Delete mode will be entered if the user choose to edit an item in the 'Show Record' page. 
+- In this example, the record of employee with Employee ID 00000001 will be deleted.
 ```
 Which item you want to delete: 1
 System Message: Item with ID = 00000888 is deleted!
@@ -162,6 +164,8 @@ Page: 1/3
 Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
 ```
 ### Fire an Employee
+- Delete mode will be entered if the user choose to fire an employee in the 'Show Record' page. 
+- In this example, the status of employee with Employee ID 00000002 will be changed from 'Normal' to 'Fired.
 ```
 Whom you want to fire: 1
 Page: 1/3
