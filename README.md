@@ -234,4 +234,22 @@ Select attributes to sort:
 
 Please enter your choice: 
 ```
+### Import Records from File
+```
+Please enter name of file to import: test.txt
+System Message: Capacity of database has been enlarged to 6!
+System Message: Capacity of database has been enlarged to 9!
+System Message: Capacity of database has been enlarged to 12!
+System Message: Capacity of database has been enlarged to 15!
+System Message: Capacity of database has been enlarged to 18!
+System Message: Capacity of database has been enlarged to 21!
+System Message: Capacity of database has been enlarged to 24!
+System Message: Capacity of database has been enlarged to 27!
+System Message: File test.txt is successfully imported!
+```
+### Export Records to File
+```
+Please enter name of file to export: test.txt
+File Successfully Exported!
+```
 ## License
