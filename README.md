@@ -246,6 +246,48 @@ System Message: File test.txt is successfully imported!
 Please enter name of file to export: test.txt
 File is Successfully Exported!
 ```
+### Import Records from File with User-defined Attributes
+```
+Page: 1/1
+ # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age  abcd  efgh
+-------------------------------------------------------------------------------------------------------------------------
+ 1    00000001   Shun Wing     Wong       M     Intern    20000    FT   Normal  2233-3322     12-04-1998   21  ----  ----
+ 2    00000002     King To    Leung       M   Engineer    30000    FT   Normal  6409-9723     03-04-1988   31  ----  ----
+ 3    00000003  Kwong Wing       Au       M     Intern    40000    FT   Normal  2345-6789     10-10-1989   29  1234  ----
+ 4    00000004     Mud Cow      Lai       M   Engineer    50000    FT   Normal  9876-5432     11-11-1999   19  5678  9123
+ 
+Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
+```
+### Add Record with New User-defined Attributes
+```
+Please enter Employee ID: 00000005
+Please enter First Name: Siu Hau
+Please enter Last Name: Chiu
+Please enter Gender: F
+Please enter Job Title: Intern
+Please enter Salary: 15000
+Please enter Form of Employment: PT
+Please enter Job Status: Normal
+Please enter Phone Number: 92348758
+Please enter Date of Birth (dd-mm-yyyy): 10-10-1997
+Please enter abcd: 9123
+Please enter efgh: 4567
+Add user defined attributes (Y/N)? Y
+Number of new user defined attributes? 1
+New attribute 1: ijkl
+Value of ijkl: 4321
+
+Page: 1/1
+ # Employee ID  First Name  Surname  Gender  Job Title   Salary  Form   Status  Phone No.  Date of Birth  Age  abcd  efgh  ijkl
+-------------------------------------------------------------------------------------------------------------------------------
+ 1    00000001   Shun Wing     Wong       M     Intern    20000    FT   Normal  2233-3322     12-04-1998   21  ----  ----  ----
+ 2    00000002     King To    Leung       M   Engineer    30000    FT   Normal  6409-9723     03-04-1988   31  ----  ----  ----
+ 3    00000003  Kwong Wing       Au       M     Intern    40000    FT   Normal  2345-6789     10-10-1989   29  1234  ----  ----
+ 4    00000004     Mud Cow      Lai       M   Engineer    50000    FT   Normal  9876-5432     11-11-1999   19  5678  9123  ----
+ 5    00000005     Siu Hau     Chiu       F     Intern    15000    PT   Normal  9234-8758     10-10-1997   21  9123  4567  4321
+
+Q = Quit. E = Edit. N = Next. P = Previous. D = Delete. S = Sort. F = Fire. Your Choce: 
+```
 ## Team
 
 [![Chu Kin Ning](https://avatars1.githubusercontent.com/u/47244396?s=460&v=4)](https://github.com/u3557110) | [![Leung King To](https://avatars2.githubusercontent.com/u/49025797?s=460&v=4)](https://github.com/totoleung) 
