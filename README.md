@@ -99,4 +99,18 @@ Page: 1/3
  9    00000009    Siu Ming     Chan       M    Manager    50000    FT   Normal  6663-6568     03-04-1978   41
 10    00000010     Sui Kit       Au       M    Manager    50000    FT   Normal  6830-0945     03-04-1968   51
 ```
+### Add Record
+```
+Please enter Staff Number: 00000088
+Please enter First Name: Siu Hau
+Please enter Last Name: Chiu
+Please enter Gender: M
+Please enter Job Title: Engineer
+Please enter Salary: 30000
+Please enter Form of Employment: FT
+Please enter Job Status: Normal
+Please enter Phone Number: 56307923
+Please enter Date of Birth (dd-mm-yyyy): 10-10-1993
+Add user defined attributes (Y/N)? N
+```
 ## License
