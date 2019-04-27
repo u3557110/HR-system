@@ -11,4 +11,6 @@
 
 #include <stdio.h>
 
+char show_menu();
+
 #endif /* showMenu_hpp */
